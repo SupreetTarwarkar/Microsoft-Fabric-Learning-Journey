@@ -137,35 +137,6 @@ The focus is on understanding how Microsoft Fabric can be used to solve real-wor
 
 ---
 
-## Portfolio Development
-
-This repository is also being developed as part of my professional data analytics portfolio.
-
-The objective is to demonstrate:
-
-* Practical Microsoft Fabric knowledge
-* Data engineering fundamentals
-* Data transformation skills
-* SQL and PySpark capabilities
-* Power BI integration
-* Business-oriented analytics
-* End-to-end project implementation
-
----
-
-## Future Additions
-
-* Detailed topic-wise learning notes
-* Project documentation
-* Screenshots and dashboards
-* Datasets and supporting files
-* Additional Microsoft Fabric projects
-* Advanced Fabric concepts
-* Interview-focused notes
-* Portfolio-ready case studies
-
----
-
 ## Learning Resources
 
 Learning resources and references will be added here as the repository develops.
