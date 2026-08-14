@@ -9,6 +9,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 ## 1. Topics Learned
 
 ### Microsoft Fabric Fundamentals
+
 - Microsoft Fabric overview and architecture
 - Fabric workloads
 - Workspaces and workspace roles
@@ -17,6 +18,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Fabric trial and capacity concepts
 
 ### OneLake
+
 - Microsoft OneLake
 - Unified data lake concept
 - OneLake across Fabric workloads
@@ -24,6 +26,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Direct Lake
 
 ### Lakehouse
+
 - Microsoft Fabric Lakehouse
 - Lakehouse architecture
 - Files and Tables
@@ -31,6 +34,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Bronze, Silver and Gold layers
 
 ### Data Ingestion & Orchestration
+
 - Data ingestion in Microsoft Fabric
 - Data Pipelines
 - Pipeline activities
@@ -41,6 +45,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - On Skip
 
 ### Data Transformation
+
 - Data preparation and transformation
 - Data cleaning
 - Bronze-to-Silver transformation
@@ -48,6 +53,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Dataflow Gen2
 
 ### PySpark & SQL
+
 - PySpark fundamentals
 - PySpark DataFrames
 - PySpark vs Pandas
@@ -56,6 +62,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Filtering, grouping and aggregation
 
 ### Power BI & Fabric Integration
+
 - Lakehouse to Power BI workflow
 - Semantic Models
 - Direct Lake
@@ -119,42 +126,46 @@ Power BI Report
 Analysis & Visualization
 ```
 
-The complete project, including the project documentation, dataset, screenshots, Power BI file, and project demonstration video, is available in the project folder below.
+Detailed project documentation, dataset, screenshots, Power BI file, and project demonstration are available in:
 
-[HR Attrition Project](Projects/HR-Attrition/)
-
+**[HR Attrition Project](Projects/HR-Attrition/)**
 
 ---
 
 ## 4. Learning Resource & Reference
 
-
-This learning journey was supported by the structured Microsoft Fabric learning series by Mansi Goel.
+This learning journey was supported by the structured **Microsoft Fabric learning series by Mansi Goel**.
 
 The videos and demonstrations were used as the primary learning resource for understanding Microsoft Fabric concepts and following the guided learning process.
 
-Primary Learning Resource
+### Primary Learning Resource
 
-Microsoft Fabric Learning Series — Mansi Goel
+**[Microsoft Fabric Learning Series — Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
 
+---
 
-5. Certifications
-Microsoft Certified: Power BI Data Analyst Associate — PL-300
+## 5. Certifications
 
-View Microsoft Credential
+### Microsoft Certified: Power BI Data Analyst Associate — PL-300
 
-Microsoft Certified: Fabric Analytics Engineer Associate — DP-600
+**[View Microsoft Credential](https://learn.microsoft.com/en-us/users/supreettarwarkar/credentials/b29f0f1736af0b52)**
 
-View Microsoft Credential
+### Microsoft Certified: Fabric Analytics Engineer Associate — DP-600
 
-6. Acknowledgement
+**[View Microsoft Credential](https://learn.microsoft.com/en-us/users/supreettarwarkar/credentials/63b7b94a00ef0870)**
 
-Special thanks to Mansi Goel for creating and sharing the structured Microsoft Fabric learning series, practical demonstrations, and guided project content that supported this learning journey.
+---
 
-Microsoft Fabric Learning Series — Mansi Goel
+## 6. Acknowledgement
 
-Author
+Special thanks to **Mansi Goel** for creating and sharing the structured Microsoft Fabric learning series, practical demonstrations, and guided project content that supported this learning journey.
 
-Supreet Tarwarkar
+**[Microsoft Fabric Learning Series — Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
+
+---
+
+## Author
+
+**Supreet Tarwarkar**
 
 Data Analytics | Microsoft Fabric | Power BI | SQL | Python | FinTech Analytics
