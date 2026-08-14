@@ -88,42 +88,25 @@ The concepts learned during this journey are organized into topic-wise notes for
 - Concepts applied through guided project work
 - Final work organized for portfolio showcase
 
-### Notes Structure
-
-```text
-Notes/
-├── Fabric-Fundamentals.md
-├── OneLake.md
-├── Lakehouse.md
-├── Data-Ingestion.md
-├── Data-Transformation.md
-├── PySpark.md
-├── SQL.md
-└── Power-BI-Integration.md
-```
-
 ---
 
 ## 3. HR Attrition Guided Project
 
 As part of this learning journey, I implemented a guided **HR Attrition Analysis** project using **Microsoft Fabric and Power BI**.
 
-### Project Workflow
+The complete project is organized in the `Projects/HR-Attrition/` folder.
+
+### Repository Structure
 
 ```text
-Source Data
-     ↓
-Dataflow Gen2
-     ↓
-Data Transformation
-     ↓
-Lakehouse
-     ↓
-Semantic Model
-     ↓
-Power BI Report
-     ↓
-Analysis & Visualization
+Projects/
+└── HR-Attrition/
+    ├── README.md
+    ├── Screenshots/
+    ├── Dataset/
+    ├── PowerBI/
+    └── Video/
+
 ```
 
 Detailed project documentation, dataset, screenshots, Power BI file, and project demonstration are available in:
