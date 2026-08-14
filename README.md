@@ -101,16 +101,16 @@ This repository documents my topic-wise learning, hands-on practice, technical n
 
 ### Learn → Reinforce → Practice → Document → Build → Showcase
 
-1. **Learn** — Studied Microsoft Fabric topics through a structured, topic-wise video learning series.
-2. **Reinforce** — Reviewed important concepts and demonstrations more than once.
-3. **Practice** — Created handwritten notes and practiced the concepts directly in Microsoft Fabric.
-4. **Document** — Organized learning notes, practical work, screenshots and project documentation in GitHub.
-5. **Build** — Applied the learned concepts through guided project implementation.
-6. **Showcase** — Organized the project, dashboards, screenshots and demonstration for portfolio presentation.
+1. **Learn**    : Studied Microsoft Fabric topics through a structured, topic-wise video learning series.
+2. **Reinforce**: Reviewed important concepts and demonstrations more than once.
+3. **Practice** : Created handwritten notes and practiced the concepts directly in Microsoft Fabric.
+4. **Document** : Organized learning notes, practical work, screenshots and project documentation in GitHub.
+5. **Build**    : Applied the learned concepts through guided project implementation.
+6. **Showcase** : Organized the project, dashboards, screenshots and demonstration for portfolio presentation.
 
 ---
 
-# Guided Project — HR Attrition Analysis
+# Guided Project : HR Attrition Analysis
 
 As part of the learning journey, Microsoft Fabric concepts were applied through a **guided HR Attrition Analysis project** using Microsoft Fabric and Power BI.
 
@@ -225,22 +225,6 @@ The folder contains:
 
 ---
 
-## Dataset Source
-
-The dataset used during the learning/project exercise:
-
-[Sales Dataset — Raw CSV](https://raw.githubusercontent.com/the-mansi-goel/FABRIC/refs/heads/main/sales_data.csv)
-
----
-
-## Project Demonstration
-
-A demonstration video showing the project and Microsoft Fabric implementation:
-
-[View Project Demonstration](https://drive.google.com/file/d/14C08ETxHqKhELwHhBPkMjArpU0i3gC5C/view?usp=sharing)
-
----
-
 # Learning Resource & Reference
 
 This learning journey was supported by the structured **Microsoft Fabric learning series by Mansi Goel**.
@@ -278,7 +262,3 @@ Special thanks to **Mansi Goel** for creating and sharing the structured Microso
 **Supreet Tarwarkar**
 
 Data Analytics | Microsoft Fabric | Power BI | SQL | Python | FinTech Analytics
-
----
-
-> **Learn → Practice → Document → Build → Showcase**
