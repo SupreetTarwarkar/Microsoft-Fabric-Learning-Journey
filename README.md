@@ -113,9 +113,13 @@ Semantic Model
      ↓
 Power BI Report
      ↓
-Analysis & Visualization''''
+Analysis & Visualization
 
-4. Learning Resource & Reference
+
+---
+
+## 4. Learning Resource & Reference
+
 
 This learning journey was supported by the structured Microsoft Fabric learning series by Mansi Goel.
 
