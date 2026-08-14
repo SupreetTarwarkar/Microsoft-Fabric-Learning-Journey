@@ -123,17 +123,17 @@ The videos and demonstrations were used as the primary learning resource for und
 
 ### Primary Learning Resource
 
-**[Microsoft Fabric Learning Series — Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
+**[Microsoft Fabric Learning Series : Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
 
 ---
 
 ## 5. Certifications
 
-### Microsoft Certified: Power BI Data Analyst Associate — PL-300
+### Microsoft Certified: Power BI Data Analyst Associate : PL-300
 
 **[View Microsoft Credential](https://learn.microsoft.com/en-us/users/supreettarwarkar/credentials/b29f0f1736af0b52)**
 
-### Microsoft Certified: Fabric Analytics Engineer Associate — DP-600
+### Microsoft Certified: Fabric Analytics Engineer Associate : DP-600
 
 **[View Microsoft Credential](https://learn.microsoft.com/en-us/users/supreettarwarkar/credentials/63b7b94a00ef0870)**
 
@@ -143,7 +143,7 @@ The videos and demonstrations were used as the primary learning resource for und
 
 Special thanks to **Mansi Goel** for creating and sharing the structured Microsoft Fabric learning series, practical demonstrations, and guided project content that supported this learning journey.
 
-**[Microsoft Fabric Learning Series — Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
+**[Microsoft Fabric Learning Series : Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
 
 ---
 
