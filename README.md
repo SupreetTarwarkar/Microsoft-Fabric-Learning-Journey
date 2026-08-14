@@ -1,15 +1,14 @@
 # Microsoft Fabric Learning Journey
 
-A structured learning journey focused on **Microsoft Fabric, data analytics, data engineering concepts, and Power BI integration**.
+A structured learning journey focused on **Microsoft Fabric, Data Analytics, Data Engineering concepts, and Power BI integration**.
 
-This repository documents my topic-wise learning, hands-on practice, technical notes, and guided project implementation using Microsoft Fabric.
+This repository documents my learning, handwritten notes, hands-on practice, technical documentation, and guided project implementation while learning Microsoft Fabric.
 
 ---
 
-## What I Learned
+## 1. Topics Learned
 
 ### Microsoft Fabric Fundamentals
-
 - Microsoft Fabric overview and architecture
 - Fabric workloads
 - Workspaces and workspace roles
@@ -18,29 +17,23 @@ This repository documents my topic-wise learning, hands-on practice, technical n
 - Fabric trial and capacity concepts
 
 ### OneLake
-
 - Microsoft OneLake
 - Unified data lake concept
-- Centralized data storage
 - OneLake across Fabric workloads
 - OneLake and Power BI integration
 - Direct Lake
 
 ### Lakehouse
-
 - Microsoft Fabric Lakehouse
 - Lakehouse architecture
 - Files and Tables
-- Structured and unstructured data
-- Medallion architecture
+- Medallion Architecture
 - Bronze, Silver and Gold layers
 
 ### Data Ingestion & Orchestration
-
 - Data ingestion in Microsoft Fabric
 - Data Pipelines
 - Pipeline activities
-- Pipeline orchestration
 - Activity dependencies
 - On Success
 - On Failure
@@ -48,33 +41,23 @@ This repository documents my topic-wise learning, hands-on practice, technical n
 - On Skip
 
 ### Data Transformation
-
 - Data preparation and transformation
 - Data cleaning
 - Bronze-to-Silver transformation
 - Power Query transformations
-- Data transformation workflows
+- Dataflow Gen2
 
-### PySpark & Data Processing
-
+### PySpark & SQL
 - PySpark fundamentals
 - PySpark DataFrames
-- PySpark for large-scale data processing
 - PySpark vs Pandas
-- Data transformation using PySpark
-
-### SQL
-
+- Large-scale data processing concepts
 - SQL querying
-- Filtering and aggregation
-- Grouping and analysis
-- SQL-based data transformation
+- Filtering, grouping and aggregation
 
 ### Power BI & Fabric Integration
-
-- Power BI integration with Microsoft Fabric
 - Lakehouse to Power BI workflow
-- Semantic models
+- Semantic Models
 - Direct Lake
 - Power BI report development
 - Data visualization
@@ -82,39 +65,38 @@ This repository documents my topic-wise learning, hands-on practice, technical n
 
 ---
 
-## Technologies & Tools
+## 2. Notes & Learning Approach
 
-- Microsoft Fabric
-- OneLake
-- Lakehouse
-- Dataflow Gen2
-- Power Query
-- Semantic Model
-- SQL
-- Power BI
-- PySpark
-- GitHub
+The concepts learned during this journey are organized into topic-wise notes for revision and future reference.
 
----
+### Learning Approach
 
-## Learning & Implementation Approach
+**Learn → Reinforce → Practice → Document → Build → Showcase**
 
-### Learn → Reinforce → Practice → Document → Build → Showcase
+- Topic-wise learning through Microsoft Fabric videos
+- Important concepts reviewed more than once
+- Concepts summarized through handwritten notes
+- Hands-on practice performed in Microsoft Fabric
+- Learning documented in GitHub
+- Concepts applied through guided project work
+- Final work organized for portfolio showcase
 
-1. **Learn** : Studied Microsoft Fabric concepts through a structured, topic-wise video learning series.
-2. **Reinforce** : Reviewed important concepts and demonstrations more than once.
-3. **Practice** : Created handwritten notes and practiced the concepts directly in Microsoft Fabric.
-4. **Document** : Organized learning notes, practical work and technical documentation in GitHub.
-5. **Build** : Applied the learned concepts through guided project implementation.
-6. **Showcase** : Organized the learning work and project implementation for portfolio presentation.
+### Notes Structure
 
----
+```text
+Notes/
+├── Fabric-Fundamentals.md
+├── OneLake.md
+├── Lakehouse.md
+├── Data-Ingestion.md
+├── Data-Transformation.md
+├── PySpark.md
+├── SQL.md
+└── Power-BI-Integration.md
 
-## Guided Project
+## 3. HR Attrition Guided Project
 
-### HR Attrition Analysis
-
-A guided project implemented using **Microsoft Fabric and Power BI** to apply the concepts learned throughout the learning journey.
+As part of this learning journey, I implemented a guided **HR Attrition Analysis** project using **Microsoft Fabric and Power BI**.
 
 ### Project Workflow
 
@@ -131,27 +113,36 @@ Semantic Model
      ↓
 Power BI Report
      ↓
-Analysis & Visualization
+Analysis & Visualization''''
 
-Microsoft-Fabric-Learning/
-│
-├── Notes/
-│   ├── Fabric-Fundamentals.md
-│   ├── OneLake.md
-│   ├── Lakehouse.md
-│   ├── Data-Ingestion.md
-│   ├── Data-Transformation.md
-│   ├── PySpark.md
-│   ├── SQL.md
-│   └── Power-BI-Integration.md
-│
-├── Projects/
-│   └── HR-Attrition/
-│       ├── README.md
-│       ├── Screenshots/
-│       ├── Dataset/
-│       ├── PowerBI/
-│       └── Video/
-│
-└── README.md
+4. Learning Resource & Reference
 
+This learning journey was supported by the structured Microsoft Fabric learning series by Mansi Goel.
+
+The videos and demonstrations were used as the primary learning resource for understanding Microsoft Fabric concepts and following the guided learning process.
+
+Primary Learning Resource
+
+Microsoft Fabric Learning Series — Mansi Goel
+
+
+5. Certifications
+Microsoft Certified: Power BI Data Analyst Associate — PL-300
+
+View Microsoft Credential
+
+Microsoft Certified: Fabric Analytics Engineer Associate — DP-600
+
+View Microsoft Credential
+
+6. Acknowledgement
+
+Special thanks to Mansi Goel for creating and sharing the structured Microsoft Fabric learning series, practical demonstrations, and guided project content that supported this learning journey.
+
+Microsoft Fabric Learning Series — Mansi Goel
+
+Author
+
+Supreet Tarwarkar
+
+Data Analytics | Microsoft Fabric | Power BI | SQL | Python | FinTech Analytics
