@@ -93,6 +93,9 @@ Notes/
 ├── PySpark.md
 ├── SQL.md
 └── Power-BI-Integration.md
+```
+
+---
 
 ## 3. HR Attrition Guided Project
 
@@ -114,6 +117,11 @@ Semantic Model
 Power BI Report
      ↓
 Analysis & Visualization
+```
+
+The complete project, including the project documentation, dataset, screenshots, Power BI file, and project demonstration video, is available in the project folder below.
+
+[HR Attrition Project](Projects/HR-Attrition/)
 
 
 ---
