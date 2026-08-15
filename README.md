@@ -149,6 +149,7 @@ Special thanks to **Mansi Goel** for creating and sharing the structured Microso
 
 ## Author
 
-**Supreet Tarwarkar**
+Supreet Tarwarkar
 
-Data Analytics | Microsoft Fabric | Power BI | SQL | Python | FinTech Analytics
+GitHub: https://github.com/SupreetTarwarkar
+LinkedIn: https://www.linkedin.com/in/supreettarwarkar/
