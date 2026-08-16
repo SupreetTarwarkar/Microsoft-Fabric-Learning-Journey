@@ -2,7 +2,7 @@
 
 ---
 
-## [Chapter 1 — Microsoft Fabric Fundamentals](1.%20Microsoft-Fabric-Fundamentals.md)
+## [Chapter 1 : Microsoft Fabric Fundamentals](1.%20Microsoft-Fabric-Fundamentals.md)
 
 1.1 [What is Microsoft Fabric?](1.%20Microsoft-Fabric-Fundamentals.md#11-what-is-microsoft-fabric)  
 1.2 [Microsoft Fabric as SaaS](1.%20Microsoft-Fabric-Fundamentals.md#12-microsoft-fabric-as-saas)  
