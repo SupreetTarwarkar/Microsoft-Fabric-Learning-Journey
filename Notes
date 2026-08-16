@@ -1,20 +1,21 @@
-# Microsoft Fabric Learning Notes
+## 📚 Microsoft Fabric Learning Notes
 
-This repository contains my structured Microsoft Fabric learning notes, covering the complete journey from Fabric fundamentals to building an end-to-end analytics solution.
+These notes document my Microsoft Fabric learning journey from core platform
+concepts to building an end-to-end analytics solution.
 
-## Table of Contents
-
-1. [Microsoft Fabric Fundamentals](notes/01-microsoft-fabric-fundamentals.md)
-2. [Fabric Capacity, Workspace and Workspace Roles](notes/02-fabric-capacity-workspace-roles.md)
-3. [OneLake, Lakehouse and Delta Tables](notes/03-onelake-lakehouse-delta-tables.md)
-4. [Data Ingestion and Data Pipelines](notes/04-data-ingestion-and-data-pipelines.md)
-5. [Data Transformation with Notebooks and PySpark](notes/05-notebooks-and-pyspark.md)
-6. [Dataflow Gen2](notes/06-dataflow-gen2.md)
-7. [Medallion Architecture](notes/07-medallion-architecture.md)
-8. [Fabric Data Warehouse](notes/08-fabric-data-warehouse.md)
-9. [OneLake Shortcuts and Data Orchestration](notes/09-shortcuts-and-orchestration.md)
-10. [Data Modelling, Star Schema and Date Table](notes/10-data-modelling.md)
-11. [Power BI, Semantic Models and Security](notes/11-power-bi-semantic-model-security.md)
-12. [Monitoring, Alerts and Debugging](notes/12-monitoring-alerts-debugging.md)
-13. [Security and Governance](notes/13-security-and-governance.md)
-14. [End-to-End Microsoft Fabric Project](notes/14-end-to-end-fabric-project.md)
+| # | Topic | What I Learned |
+|---|---|---|
+| 01 | [Microsoft Fabric Fundamentals](Notes/01-Microsoft-Fabric-Fundamentals.md) | Fabric architecture, workloads, OneLake and core concepts |
+| 02 | [Fabric Capacity & Workspaces](Notes/02-Fabric-Capacity-and-Workspaces.md) | Capacity, CUs, workspaces, items and workspace roles |
+| 03 | [OneLake, Lakehouse & Delta Tables](Notes/03-OneLake-Lakehouse-and-Delta-Tables.md) | OneLake architecture, Lakehouse concepts and Delta tables |
+| 04 | [Data Ingestion & Pipelines](Notes/04-Data-Ingestion-and-Pipelines.md) | Data ingestion, Copy Activity, pipelines and parameters |
+| 05 | [Notebooks & PySpark](Notes/05-Notebooks-and-PySpark.md) | Spark notebooks, PySpark and data transformations |
+| 06 | [Dataflow Gen2](Notes/06-Dataflow-Gen2.md) | Power Query transformations, destinations and query concepts |
+| 07 | [Medallion Architecture](Notes/07-Medallion-Architecture.md) | Bronze, Silver and Gold architecture |
+| 08 | [Fabric Data Warehouse](Notes/08-Fabric-Data-Warehouse.md) | Warehouse architecture, SQL analytics and Lakehouse vs Warehouse |
+| 09 | [OneLake Shortcuts & Orchestration](Notes/09-OneLake-Shortcuts-and-Orchestration.md) | Shortcuts, data reuse, orchestration and scheduling |
+| 10 | [Data Modelling & Star Schema](Notes/10-Data-Modelling-and-Star-Schema.md) | Fact tables, dimensions, relationships and date tables |
+| 11 | [Power BI & Semantic Models](Notes/11-Power-BI-and-Semantic-Models.md) | Semantic models, Direct Lake, DAX and Power BI reporting |
+| 12 | [Monitoring, Alerts & Debugging](Notes/12-Monitoring-Alerts-and-Debugging.md) | Monitoring Hub, pipeline monitoring, alerts and troubleshooting |
+| 13 | [Security & Governance](Notes/13-Security-and-Governance.md) | RLS, OLS/CLS, OneLake security, lineage and governance |
+| 14 | [End-to-End Fabric Workflow](Notes/14-End-to-End-Fabric-Workflow.md) | Connecting Fabric components into a complete analytics solution |
