@@ -1,0 +1,20 @@
+# Microsoft Fabric Learning Notes
+
+This repository contains my structured Microsoft Fabric learning notes, covering the complete journey from Fabric fundamentals to building an end-to-end analytics solution.
+
+## Table of Contents
+
+1. [Microsoft Fabric Fundamentals](notes/01-microsoft-fabric-fundamentals.md)
+2. [Fabric Capacity, Workspace and Workspace Roles](notes/02-fabric-capacity-workspace-roles.md)
+3. [OneLake, Lakehouse and Delta Tables](notes/03-onelake-lakehouse-delta-tables.md)
+4. [Data Ingestion and Data Pipelines](notes/04-data-ingestion-and-data-pipelines.md)
+5. [Data Transformation with Notebooks and PySpark](notes/05-notebooks-and-pyspark.md)
+6. [Dataflow Gen2](notes/06-dataflow-gen2.md)
+7. [Medallion Architecture](notes/07-medallion-architecture.md)
+8. [Fabric Data Warehouse](notes/08-fabric-data-warehouse.md)
+9. [OneLake Shortcuts and Data Orchestration](notes/09-shortcuts-and-orchestration.md)
+10. [Data Modelling, Star Schema and Date Table](notes/10-data-modelling.md)
+11. [Power BI, Semantic Models and Security](notes/11-power-bi-semantic-model-security.md)
+12. [Monitoring, Alerts and Debugging](notes/12-monitoring-alerts-debugging.md)
+13. [Security and Governance](notes/13-security-and-governance.md)
+14. [End-to-End Microsoft Fabric Project](notes/14-end-to-end-fabric-project.md)
