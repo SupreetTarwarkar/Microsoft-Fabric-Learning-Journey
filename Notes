@@ -2,324 +2,373 @@
 
 ---
 
-## Chapter 1 — Microsoft Fabric Fundamentals ................................ [Read →](Notes/01-Microsoft-Fabric-Fundamentals.md)
+## Chapter 1 — Microsoft Fabric Fundamentals
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.1 What is Microsoft Fabric?  
-&nbsp;&nbsp;&nbsp;&nbsp;1.2 Microsoft Fabric as SaaS  
-&nbsp;&nbsp;&nbsp;&nbsp;1.3 Why Microsoft Fabric?  
-&nbsp;&nbsp;&nbsp;&nbsp;1.4 OneLake  
-&nbsp;&nbsp;&nbsp;&nbsp;1.5 Microsoft Fabric Workloads  
-&nbsp;&nbsp;&nbsp;&nbsp;1.6 Different Personas in Microsoft Fabric  
-&nbsp;&nbsp;&nbsp;&nbsp;1.7 End-to-End Fabric Data Flow  
-&nbsp;&nbsp;&nbsp;&nbsp;1.8 Fabric Workspace  
-&nbsp;&nbsp;&nbsp;&nbsp;1.9 Workspace Roles  
-&nbsp;&nbsp;&nbsp;&nbsp;1.10 Fabric Capacity  
-&nbsp;&nbsp;&nbsp;&nbsp;1.11 How Fabric Components Connect  
-&nbsp;&nbsp;&nbsp;&nbsp;1.12 Important Fabric Terminology  
-&nbsp;&nbsp;&nbsp;&nbsp;1.13 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;1.14 Key Takeaways  
-
----
-
-## Chapter 2 — Fabric Capacity, Workspaces & Roles ..................... [Read →](Notes/02-Fabric-Capacity-and-Workspaces.md)
-
-&nbsp;&nbsp;&nbsp;&nbsp;2.1 Fabric Capacity  
-&nbsp;&nbsp;&nbsp;&nbsp;2.2 Capacity Units (CU)  
-&nbsp;&nbsp;&nbsp;&nbsp;2.3 Fabric F-SKUs  
-&nbsp;&nbsp;&nbsp;&nbsp;2.4 Shared Capacity Across Workloads  
-&nbsp;&nbsp;&nbsp;&nbsp;2.5 Why Capacity Matters  
-&nbsp;&nbsp;&nbsp;&nbsp;2.6 Fabric Trial Capacity  
-&nbsp;&nbsp;&nbsp;&nbsp;2.7 F64 and Power BI  
-&nbsp;&nbsp;&nbsp;&nbsp;2.8 Fabric Workspace  
-&nbsp;&nbsp;&nbsp;&nbsp;2.9 Workspace Roles  
-&nbsp;&nbsp;&nbsp;&nbsp;2.10 Principle of Least Privilege  
-&nbsp;&nbsp;&nbsp;&nbsp;2.11 Workspace Access vs Data Access  
-&nbsp;&nbsp;&nbsp;&nbsp;2.12 Capacity Monitoring  
-&nbsp;&nbsp;&nbsp;&nbsp;2.13 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;2.14 Key Takeaways  
+1.1 What is Microsoft Fabric?  
+1.2 Microsoft Fabric as SaaS  
+1.3 Why Microsoft Fabric?  
+1.4 OneLake  
+1.5 Microsoft Fabric Workloads  
+1.6 Different Personas in Microsoft Fabric  
+1.7 End-to-End Fabric Data Flow  
+1.8 Fabric Workspace  
+1.9 Workspace Roles  
+1.10 Fabric Capacity  
+1.11 How Fabric Components Connect  
+1.12 Important Fabric Terminology  
+1.13 Interview Understanding  
+1.14 Key Takeaways  
 
 ---
 
-## Chapter 3 — Lakehouse & Delta Tables ........................................ [Read →](Notes/03-OneLake-Lakehouse-and-Delta-Tables.md)
+## Chapter 2 — Fabric Capacity, Workspaces & Roles
 
-&nbsp;&nbsp;&nbsp;&nbsp;3.1 What is a Lakehouse?  
-&nbsp;&nbsp;&nbsp;&nbsp;3.2 Why Use a Lakehouse?  
-&nbsp;&nbsp;&nbsp;&nbsp;3.3 Lakehouse in Microsoft Fabric  
-&nbsp;&nbsp;&nbsp;&nbsp;3.4 Files vs Tables  
-&nbsp;&nbsp;&nbsp;&nbsp;3.5 Delta Lake  
-&nbsp;&nbsp;&nbsp;&nbsp;3.6 Delta Table Architecture  
-&nbsp;&nbsp;&nbsp;&nbsp;3.7 CSV vs Parquet vs Delta  
-&nbsp;&nbsp;&nbsp;&nbsp;3.8 ACID Transactions  
-&nbsp;&nbsp;&nbsp;&nbsp;3.9 Delta Transaction Log  
-&nbsp;&nbsp;&nbsp;&nbsp;3.10 Table Versioning  
-&nbsp;&nbsp;&nbsp;&nbsp;3.11 Time Travel  
-&nbsp;&nbsp;&nbsp;&nbsp;3.12 Schema Enforcement  
-&nbsp;&nbsp;&nbsp;&nbsp;3.13 Schema Evolution  
-&nbsp;&nbsp;&nbsp;&nbsp;3.14 CRUD and MERGE Operations  
-&nbsp;&nbsp;&nbsp;&nbsp;3.15 SQL Analytics Endpoint  
-&nbsp;&nbsp;&nbsp;&nbsp;3.16 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;3.17 Key Takeaways  
+2.1 Fabric Capacity  
+2.2 Capacity Units (CU)  
+2.3 Fabric F-SKUs  
+2.4 Shared Capacity Across Workloads  
+2.5 Why Capacity Matters  
+2.6 Fabric Trial Capacity  
+2.7 F64 and Power BI  
+2.8 Fabric Workspace  
+2.9 Workspace Roles  
+2.10 Principle of Least Privilege  
+2.11 Workspace Access vs Data Access  
+2.12 Capacity Monitoring  
+2.13 Interview Understanding  
+2.14 Key Takeaways  
 
 ---
 
-## Chapter 4 — Data Factory & Data Pipelines ................................. [Read →](Notes/04-Data-Ingestion-and-Pipelines.md)
+## Chapter 3 — Lakehouse and Delta Tables
 
-&nbsp;&nbsp;&nbsp;&nbsp;4.1 Data Factory in Microsoft Fabric  
-&nbsp;&nbsp;&nbsp;&nbsp;4.2 Data Ingestion  
-&nbsp;&nbsp;&nbsp;&nbsp;4.3 Data Pipelines  
-&nbsp;&nbsp;&nbsp;&nbsp;4.4 Data Movement vs Orchestration  
-&nbsp;&nbsp;&nbsp;&nbsp;4.5 Pipeline Activities  
-&nbsp;&nbsp;&nbsp;&nbsp;4.6 Copy Data Activity  
-&nbsp;&nbsp;&nbsp;&nbsp;4.7 Source and Destination  
-&nbsp;&nbsp;&nbsp;&nbsp;4.8 Connections  
-&nbsp;&nbsp;&nbsp;&nbsp;4.9 Column Mapping  
-&nbsp;&nbsp;&nbsp;&nbsp;4.10 Pipeline Dependencies  
-&nbsp;&nbsp;&nbsp;&nbsp;4.11 Sequential vs Parallel Execution  
-&nbsp;&nbsp;&nbsp;&nbsp;4.12 Parameters and Variables  
-&nbsp;&nbsp;&nbsp;&nbsp;4.13 Lookup Activity  
-&nbsp;&nbsp;&nbsp;&nbsp;4.14 ForEach Activity  
-&nbsp;&nbsp;&nbsp;&nbsp;4.15 If Condition  
-&nbsp;&nbsp;&nbsp;&nbsp;4.16 Notebook & Dataflow Activities  
-&nbsp;&nbsp;&nbsp;&nbsp;4.17 Pipeline Scheduling  
-&nbsp;&nbsp;&nbsp;&nbsp;4.18 Pipeline Monitoring  
-&nbsp;&nbsp;&nbsp;&nbsp;4.19 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;4.20 Key Takeaways  
+3.1 What is a Lakehouse?  
+3.2 Why Do We Need a Lakehouse?  
+3.3 Lakehouse in Microsoft Fabric  
+3.4 Files and Tables in a Lakehouse  
+3.5 What is Delta Lake?  
+3.6 Delta Table Structure  
+3.7 CSV vs Parquet vs Delta  
+3.8 ACID Transactions  
+3.9 Delta Transaction Log  
+3.10 Delta Table Versioning  
+3.11 Time Travel  
+3.12 Schema Enforcement  
+3.13 Schema Evolution  
+3.14 CRUD Operations with Delta  
+3.15 SQL Querying in a Fabric Lakehouse  
+3.16 Interview Understanding  
+3.17 Key Takeaways  
 
 ---
 
-## Chapter 5 — Notebooks, Spark & PySpark .................................... [Read →](Notes/05-Notebooks-and-PySpark.md)
+## Chapter 4 — Data Factory, Data Pipelines and Data Ingestion
 
-&nbsp;&nbsp;&nbsp;&nbsp;5.1 Fabric Notebooks  
-&nbsp;&nbsp;&nbsp;&nbsp;5.2 Apache Spark  
-&nbsp;&nbsp;&nbsp;&nbsp;5.3 PySpark  
-&nbsp;&nbsp;&nbsp;&nbsp;5.4 PySpark vs Pandas  
-&nbsp;&nbsp;&nbsp;&nbsp;5.5 Spark DataFrames  
-&nbsp;&nbsp;&nbsp;&nbsp;5.6 Reading Data  
-&nbsp;&nbsp;&nbsp;&nbsp;5.7 display() vs show()  
-&nbsp;&nbsp;&nbsp;&nbsp;5.8 Data Transformation  
-&nbsp;&nbsp;&nbsp;&nbsp;5.9 Bronze-to-Silver Transformation  
-&nbsp;&nbsp;&nbsp;&nbsp;5.10 Filtering Data  
-&nbsp;&nbsp;&nbsp;&nbsp;5.11 Handling Null Values  
-&nbsp;&nbsp;&nbsp;&nbsp;5.12 Duplicate Handling  
-&nbsp;&nbsp;&nbsp;&nbsp;5.13 Changing Data Types  
-&nbsp;&nbsp;&nbsp;&nbsp;5.14 Writing Delta Tables  
-&nbsp;&nbsp;&nbsp;&nbsp;5.15 Lazy Evaluation  
-&nbsp;&nbsp;&nbsp;&nbsp;5.16 Transformations vs Actions  
-&nbsp;&nbsp;&nbsp;&nbsp;5.17 Spark Partitions  
-&nbsp;&nbsp;&nbsp;&nbsp;5.18 Data Validation  
-&nbsp;&nbsp;&nbsp;&nbsp;5.19 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;5.20 Key Takeaways  
-
----
-
-## Chapter 6 — Medallion Architecture ............................................. [Read →](Notes/06-Medallion-Architecture.md)
-
-&nbsp;&nbsp;&nbsp;&nbsp;6.1 What is Medallion Architecture?  
-&nbsp;&nbsp;&nbsp;&nbsp;6.2 Why Use Medallion Architecture?  
-&nbsp;&nbsp;&nbsp;&nbsp;6.3 Bronze Layer  
-&nbsp;&nbsp;&nbsp;&nbsp;6.4 Silver Layer  
-&nbsp;&nbsp;&nbsp;&nbsp;6.5 Gold Layer  
-&nbsp;&nbsp;&nbsp;&nbsp;6.6 Bronze vs Silver vs Gold  
-&nbsp;&nbsp;&nbsp;&nbsp;6.7 Data Quality Across Layers  
-&nbsp;&nbsp;&nbsp;&nbsp;6.8 Why Preserve Bronze?  
-&nbsp;&nbsp;&nbsp;&nbsp;6.9 Reusable Silver Layer  
-&nbsp;&nbsp;&nbsp;&nbsp;6.10 Multiple Gold Tables  
-&nbsp;&nbsp;&nbsp;&nbsp;6.11 Granularity in Gold  
-&nbsp;&nbsp;&nbsp;&nbsp;6.12 Gold and Star Schema  
-&nbsp;&nbsp;&nbsp;&nbsp;6.13 Delta Tables Across Layers  
-&nbsp;&nbsp;&nbsp;&nbsp;6.14 Data Validation Between Layers  
-&nbsp;&nbsp;&nbsp;&nbsp;6.15 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;6.16 Key Takeaways  
+4.1 Data Factory in Microsoft Fabric  
+4.2 Data Ingestion  
+4.3 Data Pipelines  
+4.4 Data Movement vs Orchestration  
+4.5 Pipeline Activities  
+4.6 Copy Data Activity  
+4.7 Source and Destination  
+4.8 Connections  
+4.9 Column Mapping  
+4.10 Pipeline Dependencies  
+4.11 Sequential vs Parallel Execution  
+4.12 Parameters  
+4.13 Variables vs Parameters  
+4.14 Lookup Activity  
+4.15 ForEach Activity  
+4.16 If Condition  
+4.17 Notebook Activity  
+4.18 Dataflow Gen2 Activity  
+4.19 Scheduling a Pipeline  
+4.20 Pipeline Monitoring  
+4.21 Interview Understanding  
+4.22 Key Takeaways  
 
 ---
 
-## Chapter 7 — Fabric Data Warehouse ........................................... [Read →](Notes/07-Fabric-Data-Warehouse.md)
+## Chapter 5 — Notebooks, PySpark and Data Transformation
 
-&nbsp;&nbsp;&nbsp;&nbsp;7.1 What is a Data Warehouse?  
-&nbsp;&nbsp;&nbsp;&nbsp;7.2 Fabric Warehouse  
-&nbsp;&nbsp;&nbsp;&nbsp;7.3 SQL-First Analytics  
-&nbsp;&nbsp;&nbsp;&nbsp;7.4 Warehouse Tables  
-&nbsp;&nbsp;&nbsp;&nbsp;7.5 Schemas  
-&nbsp;&nbsp;&nbsp;&nbsp;7.6 When to Use a Warehouse  
-&nbsp;&nbsp;&nbsp;&nbsp;7.7 Lakehouse vs Warehouse  
-&nbsp;&nbsp;&nbsp;&nbsp;7.8 Using Lakehouse and Warehouse Together  
-&nbsp;&nbsp;&nbsp;&nbsp;7.9 Views  
-&nbsp;&nbsp;&nbsp;&nbsp;7.10 Stored Procedures  
-&nbsp;&nbsp;&nbsp;&nbsp;7.11 View vs Stored Procedure  
-&nbsp;&nbsp;&nbsp;&nbsp;7.12 Fact and Dimension Tables  
-&nbsp;&nbsp;&nbsp;&nbsp;7.13 Warehouse and Power BI  
-&nbsp;&nbsp;&nbsp;&nbsp;7.14 Gold Layer vs Warehouse  
-&nbsp;&nbsp;&nbsp;&nbsp;7.15 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;7.16 Key Takeaways  
-
----
-
-## Chapter 8 — OneLake Shortcuts & Orchestration ......................... [Read →](Notes/08-OneLake-Shortcuts-and-Orchestration.md)
-
-&nbsp;&nbsp;&nbsp;&nbsp;8.1 OneLake Shortcuts  
-&nbsp;&nbsp;&nbsp;&nbsp;8.2 Why Shortcuts Are Used  
-&nbsp;&nbsp;&nbsp;&nbsp;8.3 Shortcut vs Copy  
-&nbsp;&nbsp;&nbsp;&nbsp;8.4 Internal Shortcuts  
-&nbsp;&nbsp;&nbsp;&nbsp;8.5 External Shortcuts  
-&nbsp;&nbsp;&nbsp;&nbsp;8.6 Shortcut vs Copy Activity  
-&nbsp;&nbsp;&nbsp;&nbsp;8.7 Source Data Changes  
-&nbsp;&nbsp;&nbsp;&nbsp;8.8 Querying Shortcut Data  
-&nbsp;&nbsp;&nbsp;&nbsp;8.9 Shortcuts and Medallion Architecture  
-&nbsp;&nbsp;&nbsp;&nbsp;8.10 Shortcuts and Security  
-&nbsp;&nbsp;&nbsp;&nbsp;8.11 Data Orchestration  
-&nbsp;&nbsp;&nbsp;&nbsp;8.12 Pipeline as the Orchestrator  
-&nbsp;&nbsp;&nbsp;&nbsp;8.13 Notebook Scheduling  
-&nbsp;&nbsp;&nbsp;&nbsp;8.14 Dataflow Gen2 Scheduling  
-&nbsp;&nbsp;&nbsp;&nbsp;8.15 Dependency Management  
-&nbsp;&nbsp;&nbsp;&nbsp;8.16 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;8.17 Key Takeaways  
+5.1 Fabric Notebooks  
+5.2 Apache Spark  
+5.3 PySpark  
+5.4 PySpark vs Pandas  
+5.5 Spark DataFrames  
+5.6 Reading Data  
+5.7 display() vs show()  
+5.8 Data Transformation  
+5.9 Bronze-to-Silver Transformation  
+5.10 Bronze Layer  
+5.11 Silver Layer  
+5.12 Filtering Data  
+5.13 Handling Null Values  
+5.14 Removing Duplicates  
+5.15 Changing Data Types  
+5.16 Creating New Columns  
+5.17 Writing Data to Silver  
+5.18 Lazy Evaluation  
+5.19 Transformations vs Actions  
+5.20 Spark Partitions  
+5.21 Data Validation  
+5.22 Interview Understanding  
+5.23 Key Takeaways  
 
 ---
 
-## Chapter 9 — Data Modelling & Star Schema ................................ [Read →](Notes/09-Data-Modelling-and-Star-Schema.md)
+## Chapter 6 — Medallion Architecture
 
-&nbsp;&nbsp;&nbsp;&nbsp;9.1 What is Data Modelling?  
-&nbsp;&nbsp;&nbsp;&nbsp;9.2 Fact Tables  
-&nbsp;&nbsp;&nbsp;&nbsp;9.3 Dimension Tables  
-&nbsp;&nbsp;&nbsp;&nbsp;9.4 Fact vs Dimension  
-&nbsp;&nbsp;&nbsp;&nbsp;9.5 Star Schema  
-&nbsp;&nbsp;&nbsp;&nbsp;9.6 Relationships  
-&nbsp;&nbsp;&nbsp;&nbsp;9.7 One-to-Many Relationships  
-&nbsp;&nbsp;&nbsp;&nbsp;9.8 Primary and Foreign Keys  
-&nbsp;&nbsp;&nbsp;&nbsp;9.9 Surrogate Keys  
-&nbsp;&nbsp;&nbsp;&nbsp;9.10 Fact Table Grain  
-&nbsp;&nbsp;&nbsp;&nbsp;9.11 Date Dimension  
-&nbsp;&nbsp;&nbsp;&nbsp;9.12 Continuous Dates  
-&nbsp;&nbsp;&nbsp;&nbsp;9.13 Measures and Filter Flow  
-&nbsp;&nbsp;&nbsp;&nbsp;9.14 Many-to-Many Relationships  
-&nbsp;&nbsp;&nbsp;&nbsp;9.15 Bi-Directional Filtering  
-&nbsp;&nbsp;&nbsp;&nbsp;9.16 Star vs Snowflake Schema  
-&nbsp;&nbsp;&nbsp;&nbsp;9.17 Semantic Models  
-&nbsp;&nbsp;&nbsp;&nbsp;9.18 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;9.19 Key Takeaways  
-
----
-
-## Chapter 10 — Dataflow Gen2 & Power Query ................................ [Read →](Notes/10-Dataflow-Gen2-and-Power-Query.md)
-
-&nbsp;&nbsp;&nbsp;&nbsp;10.1 Dataflow Gen2  
-&nbsp;&nbsp;&nbsp;&nbsp;10.2 Power Query  
-&nbsp;&nbsp;&nbsp;&nbsp;10.3 Power Query M Language  
-&nbsp;&nbsp;&nbsp;&nbsp;10.4 Applied Steps  
-&nbsp;&nbsp;&nbsp;&nbsp;10.5 Changing Data Types  
-&nbsp;&nbsp;&nbsp;&nbsp;10.6 Filtering Rows  
-&nbsp;&nbsp;&nbsp;&nbsp;10.7 Handling Nulls and Duplicates  
-&nbsp;&nbsp;&nbsp;&nbsp;10.8 Replace Values  
-&nbsp;&nbsp;&nbsp;&nbsp;10.9 Split Columns  
-&nbsp;&nbsp;&nbsp;&nbsp;10.10 Conditional & Custom Columns  
-&nbsp;&nbsp;&nbsp;&nbsp;10.11 Merge Queries  
-&nbsp;&nbsp;&nbsp;&nbsp;10.12 Append Queries  
-&nbsp;&nbsp;&nbsp;&nbsp;10.13 Group By  
-&nbsp;&nbsp;&nbsp;&nbsp;10.14 Dataflow Destinations  
-&nbsp;&nbsp;&nbsp;&nbsp;10.15 Query Folding  
-&nbsp;&nbsp;&nbsp;&nbsp;10.16 Dataflow vs Notebook  
-&nbsp;&nbsp;&nbsp;&nbsp;10.17 Dataflow vs Copy Activity  
-&nbsp;&nbsp;&nbsp;&nbsp;10.18 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;10.19 Key Takeaways  
+6.1 What is Medallion Architecture?  
+6.2 Why Use Medallion Architecture?  
+6.3 Bronze Layer  
+6.4 Silver Layer  
+6.5 Gold Layer  
+6.6 Bronze vs Silver vs Gold  
+6.7 Data Quality Across Layers  
+6.8 Why Keep Bronze?  
+6.9 Why Keep Silver?  
+6.10 Multiple Gold Tables  
+6.11 Gold Aggregations  
+6.12 Granularity in Gold  
+6.13 Gold and Star Schema  
+6.14 Delta Tables Across Layers  
+6.15 Data Validation Between Layers  
+6.16 Gold Validation  
+6.17 Interview Understanding  
+6.18 Key Takeaways  
 
 ---
 
-## Chapter 11 — Power BI, Semantic Models & RLS .......................... [Read →](Notes/11-Power-BI-Semantic-Models-and-RLS.md)
+## Chapter 7 — Fabric Data Warehouse
 
-&nbsp;&nbsp;&nbsp;&nbsp;11.1 Power BI Reporting Layer  
-&nbsp;&nbsp;&nbsp;&nbsp;11.2 Report vs Semantic Model  
-&nbsp;&nbsp;&nbsp;&nbsp;11.3 Business-Driven Reporting  
-&nbsp;&nbsp;&nbsp;&nbsp;11.4 Measures vs Calculated Columns  
-&nbsp;&nbsp;&nbsp;&nbsp;11.5 Filter Context  
-&nbsp;&nbsp;&nbsp;&nbsp;11.6 Choosing Visuals  
-&nbsp;&nbsp;&nbsp;&nbsp;11.7 KPI Cards  
-&nbsp;&nbsp;&nbsp;&nbsp;11.8 Trend Analysis  
-&nbsp;&nbsp;&nbsp;&nbsp;11.9 Slicers and Interactions  
-&nbsp;&nbsp;&nbsp;&nbsp;11.10 Dynamic Report Titles  
-&nbsp;&nbsp;&nbsp;&nbsp;11.11 Row-Level Security  
-&nbsp;&nbsp;&nbsp;&nbsp;11.12 Static RLS  
-&nbsp;&nbsp;&nbsp;&nbsp;11.13 Dynamic RLS  
-&nbsp;&nbsp;&nbsp;&nbsp;11.14 USERPRINCIPALNAME()  
-&nbsp;&nbsp;&nbsp;&nbsp;11.15 Power BI Apps  
-&nbsp;&nbsp;&nbsp;&nbsp;11.16 Workspace vs App  
-&nbsp;&nbsp;&nbsp;&nbsp;11.17 Direct Lake  
-&nbsp;&nbsp;&nbsp;&nbsp;11.18 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;11.19 Key Takeaways  
-
----
-
-## Chapter 12 — Monitoring, Alerts & Debugging .............................. [Read →](Notes/12-Monitoring-Alerts-and-Debugging.md)
-
-&nbsp;&nbsp;&nbsp;&nbsp;12.1 Why Monitoring Matters  
-&nbsp;&nbsp;&nbsp;&nbsp;12.2 Monitoring Hub  
-&nbsp;&nbsp;&nbsp;&nbsp;12.3 Pipeline Status  
-&nbsp;&nbsp;&nbsp;&nbsp;12.4 Activity-Level Monitoring  
-&nbsp;&nbsp;&nbsp;&nbsp;12.5 Duration Analysis  
-&nbsp;&nbsp;&nbsp;&nbsp;12.6 Performance Baselines  
-&nbsp;&nbsp;&nbsp;&nbsp;12.7 Error Details  
-&nbsp;&nbsp;&nbsp;&nbsp;12.8 Debugging  
-&nbsp;&nbsp;&nbsp;&nbsp;12.9 Common Pipeline Errors  
-&nbsp;&nbsp;&nbsp;&nbsp;12.10 Capacity-Related Issues  
-&nbsp;&nbsp;&nbsp;&nbsp;12.11 Root Cause Analysis  
-&nbsp;&nbsp;&nbsp;&nbsp;12.12 Monitoring vs Alerting  
-&nbsp;&nbsp;&nbsp;&nbsp;12.13 Alert Fatigue  
-&nbsp;&nbsp;&nbsp;&nbsp;12.14 Naming Conventions  
-&nbsp;&nbsp;&nbsp;&nbsp;12.15 Retry Strategy  
-&nbsp;&nbsp;&nbsp;&nbsp;12.16 Data Quality Monitoring  
-&nbsp;&nbsp;&nbsp;&nbsp;12.17 SLA Concepts  
-&nbsp;&nbsp;&nbsp;&nbsp;12.18 Production Documentation  
-&nbsp;&nbsp;&nbsp;&nbsp;12.19 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;12.20 Key Takeaways  
+7.1 What is a Data Warehouse?  
+7.2 Fabric Warehouse  
+7.3 Warehouse as a SQL-First Experience  
+7.4 Tables in a Warehouse  
+7.5 Schemas  
+7.6 Why Use Schemas?  
+7.7 When to Use a Fabric Warehouse  
+7.8 Lakehouse vs Warehouse  
+7.9 Lakehouse and Warehouse Together  
+7.10 Views  
+7.11 Stored Procedures  
+7.12 View vs Stored Procedure  
+7.13 Fact Tables  
+7.14 Dimension Tables  
+7.15 Warehouse and Power BI  
+7.16 Warehouse and Gold Layer  
+7.17 Choosing Between Lakehouse and Warehouse  
+7.18 Interview Understanding  
+7.19 Key Takeaways  
 
 ---
 
-## Chapter 13 — Security & Governance ........................................... [Read →](Notes/13-Security-and-Governance.md)
+## Chapter 8 — OneLake Shortcuts and Data Orchestration
 
-&nbsp;&nbsp;&nbsp;&nbsp;13.1 Security vs Governance  
-&nbsp;&nbsp;&nbsp;&nbsp;13.2 Fabric Security Layers  
-&nbsp;&nbsp;&nbsp;&nbsp;13.3 Workspace Roles  
-&nbsp;&nbsp;&nbsp;&nbsp;13.4 Principle of Least Privilege  
-&nbsp;&nbsp;&nbsp;&nbsp;13.5 Item-Level Permissions  
-&nbsp;&nbsp;&nbsp;&nbsp;13.6 OneLake Security  
-&nbsp;&nbsp;&nbsp;&nbsp;13.7 OneLake Security Roles  
-&nbsp;&nbsp;&nbsp;&nbsp;13.8 Table & Folder Security  
-&nbsp;&nbsp;&nbsp;&nbsp;13.9 Row-Level Security  
-&nbsp;&nbsp;&nbsp;&nbsp;13.10 Column-Level Security  
-&nbsp;&nbsp;&nbsp;&nbsp;13.11 Shortcut Security  
-&nbsp;&nbsp;&nbsp;&nbsp;13.12 Pass-Through Identity  
-&nbsp;&nbsp;&nbsp;&nbsp;13.13 OneLake Catalog  
-&nbsp;&nbsp;&nbsp;&nbsp;13.14 Fabric Domains  
-&nbsp;&nbsp;&nbsp;&nbsp;13.15 Data Lineage  
-&nbsp;&nbsp;&nbsp;&nbsp;13.16 Impact Analysis  
-&nbsp;&nbsp;&nbsp;&nbsp;13.17 Ownership & Documentation  
-&nbsp;&nbsp;&nbsp;&nbsp;13.18 Data Classification  
-&nbsp;&nbsp;&nbsp;&nbsp;13.19 Dev → Test → Production  
-&nbsp;&nbsp;&nbsp;&nbsp;13.20 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;13.21 Key Takeaways  
+8.1 OneLake Shortcuts  
+8.2 Why Do We Need Shortcuts?  
+8.3 Shortcut vs Copy  
+8.4 Internal Shortcuts  
+8.5 External Shortcuts  
+8.6 Shortcut vs Copy Activity  
+8.7 When to Use a Shortcut  
+8.8 Source Data Changes  
+8.9 Querying Through Shortcuts  
+8.10 Shortcuts and Medallion Architecture  
+8.11 Shortcuts and Security  
+8.12 Data Orchestration  
+8.13 Pipeline as the Orchestrator  
+8.14 Notebook Scheduling  
+8.15 Dataflow Gen2 Scheduling  
+8.16 Dataflow Gen2 Inside a Pipeline  
+8.17 Dependency Management  
+8.18 Interview Understanding  
+8.19 Key Takeaways  
 
 ---
 
-## Chapter 14 — End-to-End Microsoft Fabric Workflow ..................... [Read →](Notes/14-End-to-End-Fabric-Workflow.md)
+## Chapter 9 — Data Modelling, Star Schema and Date Table
 
-&nbsp;&nbsp;&nbsp;&nbsp;14.1 Understanding the Business Requirement  
-&nbsp;&nbsp;&nbsp;&nbsp;14.2 Business Requirement Document (BRD)  
-&nbsp;&nbsp;&nbsp;&nbsp;14.3 Choosing the Right Fabric Tool  
-&nbsp;&nbsp;&nbsp;&nbsp;14.4 Data Ingestion  
-&nbsp;&nbsp;&nbsp;&nbsp;14.5 Data Transformation  
-&nbsp;&nbsp;&nbsp;&nbsp;14.6 Business-Friendly Analytical Columns  
-&nbsp;&nbsp;&nbsp;&nbsp;14.7 Data Storage Decisions  
-&nbsp;&nbsp;&nbsp;&nbsp;14.8 Semantic Model  
-&nbsp;&nbsp;&nbsp;&nbsp;14.9 Power BI Reporting  
-&nbsp;&nbsp;&nbsp;&nbsp;14.10 Report Storytelling  
-&nbsp;&nbsp;&nbsp;&nbsp;14.11 KPI Selection  
-&nbsp;&nbsp;&nbsp;&nbsp;14.12 Analytical Segmentation  
-&nbsp;&nbsp;&nbsp;&nbsp;14.13 Count vs Rate  
-&nbsp;&nbsp;&nbsp;&nbsp;14.14 Correlation vs Causation  
-&nbsp;&nbsp;&nbsp;&nbsp;14.15 Security in Project Design  
-&nbsp;&nbsp;&nbsp;&nbsp;14.16 Validation  
-&nbsp;&nbsp;&nbsp;&nbsp;14.17 Documentation  
-&nbsp;&nbsp;&nbsp;&nbsp;14.18 Complete Project Lifecycle  
-&nbsp;&nbsp;&nbsp;&nbsp;14.19 Interview Understanding  
-&nbsp;&nbsp;&nbsp;&nbsp;14.20 Key Takeaways  
+9.1 What is Data Modelling?  
+9.2 Why Data Modelling is Important  
+9.3 Fact Table  
+9.4 Dimension Table  
+9.5 Fact vs Dimension  
+9.6 Star Schema  
+9.7 Why Use a Star Schema?  
+9.8 Relationships  
+9.9 One-to-Many Relationship  
+9.10 Primary Key and Foreign Key  
+9.11 Surrogate Keys  
+9.12 Fact Table Grain  
+9.13 Date Dimension  
+9.14 Why We Need a Date Dimension  
+9.15 Continuous Dates  
+9.16 Measures and Filter Flow  
+9.17 Many-to-Many Relationships  
+9.18 Bi-Directional Filtering  
+9.19 Star Schema vs Flat Table  
+9.20 Star Schema vs Snowflake Schema  
+9.21 Semantic Model  
+9.22 Data Model vs Semantic Model  
+9.23 Interview Understanding  
+9.24 Key Takeaways  
 
 ---
+
+## Chapter 10 — Dataflow Gen2 and Power Query
+
+10.1 Dataflow Gen2  
+10.2 Why Use Dataflow Gen2?  
+10.3 Dataflow Gen2 vs Notebook  
+10.4 Power Query  
+10.5 Power Query M Language  
+10.6 Connecting to Data Sources  
+10.7 Applied Steps  
+10.8 Changing Data Types  
+10.9 Filtering Rows  
+10.10 Removing Columns  
+10.11 Renaming Columns  
+10.12 Removing Duplicates  
+10.13 Handling Null Values  
+10.14 Replace Values  
+10.15 Split Column  
+10.16 Conditional Column  
+10.17 Custom Column  
+10.18 Merge Queries  
+10.19 Append Queries  
+10.20 Merge vs Append  
+10.21 Group By  
+10.22 Dataflow Gen2 Destination  
+10.23 Dataflow Gen2 and Pipeline  
+10.24 Query Folding  
+10.25 Dataflow Refresh  
+10.26 Interview Understanding  
+10.27 Key Takeaways  
+
+---
+
+## Chapter 11 — Power BI, Semantic Models and Report Security
+
+11.1 Power BI Reporting Layer  
+11.2 Power BI Report  
+11.3 Report vs Semantic Model  
+11.4 Business-Question-Driven Reporting  
+11.5 Measures vs Calculated Columns  
+11.6 Filter Context  
+11.7 Dimensions and Facts  
+11.8 Choosing the Correct Visual  
+11.9 KPI Cards  
+11.10 Trend Analysis  
+11.11 Date Table in Reporting  
+11.12 Slicers  
+11.13 Dynamic Report Titles  
+11.14 Report Interactions  
+11.15 Report Validation  
+11.16 Row-Level Security  
+11.17 Static RLS  
+11.18 Dynamic RLS  
+11.19 USERPRINCIPALNAME()  
+11.20 Static vs Dynamic RLS  
+11.21 Power BI Apps  
+11.22 Workspace vs Power BI App  
+11.23 Direct Lake  
+11.24 Interview Understanding  
+11.25 Key Takeaways  
+
+---
+
+## Chapter 12 — Monitoring, Alerts, Debugging and Production Practices
+
+12.1 Why Monitoring Matters  
+12.2 Monitoring Hub  
+12.3 Pipeline Status  
+12.4 Activity-Level Monitoring  
+12.5 Duration  
+12.6 Baseline Performance  
+12.7 Error Details  
+12.8 Debugging  
+12.9 Common Pipeline Errors  
+12.10 Authentication Errors  
+12.11 Schema Mismatch  
+12.12 Data Type Errors  
+12.13 Timeout  
+12.14 Capacity-Related Issues  
+12.15 Root Cause Analysis  
+12.16 Notifications and Alerts  
+12.17 Monitoring vs Alerting  
+12.18 Alert Fatigue  
+12.19 Descriptive Activity Names  
+12.20 Naming Conventions  
+12.21 Retry Strategy  
+12.22 Dependency Handling  
+12.23 Operational vs Data Quality Monitoring  
+12.24 SLA Concepts  
+12.25 Production Documentation  
+12.26 Ownership  
+12.27 Interview Understanding  
+12.28 Key Takeaways  
+
+---
+
+## Chapter 13 — Security, Governance, OneLake Security, Domains and Lineage
+
+13.1 Why Security and Governance Matter  
+13.2 Security vs Governance  
+13.3 Fabric Security Layers  
+13.4 Workspace Roles  
+13.5 Principle of Least Privilege  
+13.6 Item-Level Permissions  
+13.7 OneLake Security  
+13.8 OneLake Security Roles  
+13.9 Table-Level Security  
+13.10 Folder-Level Security  
+13.11 Row-Level Security  
+13.12 Column-Level Security  
+13.13 RLS vs OneLake Security  
+13.14 Security Through Shortcuts  
+13.15 Pass-Through Identity  
+13.16 OneLake Catalog  
+13.17 Fabric Domains  
+13.18 Domain vs Workspace  
+13.19 Data Lineage  
+13.20 Impact Analysis  
+13.21 Ownership  
+13.22 Naming Standards  
+13.23 Documentation  
+13.24 Sensitivity and Data Classification  
+13.25 Auditability  
+13.26 Development → Test → Production  
+13.27 Interview Understanding  
+13.28 Key Takeaways  
+
+---
+
+## Chapter 14 — End-to-End Microsoft Fabric Project Workflow
+
+14.1 Purpose of an End-to-End Fabric Project  
+14.2 Business Requirement  
+14.3 Business Requirement Document (BRD)  
+14.4 Choosing the Right Fabric Tool  
+14.5 Data Ingestion  
+14.6 Data Transformation  
+14.7 Business-Friendly Columns  
+14.8 Data Storage  
+14.9 Semantic Model  
+14.10 Power BI Reporting  
+14.11 Report Storytelling  
+14.12 KPI Selection  
+14.13 Analytical Segmentation  
+14.14 Count vs Rate  
+14.15 Correlation vs Causation  
+14.16 Security in Project Design  
+14.17 Column-Level Security  
+14.18 Validation  
+14.19 End-to-End Validation  
+14.20 Documentation  
+14.21 Learning Notes vs Project Documentation  
+14.22 Tool Selection  
+14.23 Complete Fabric Project Lifecycle  
+14.24 Interview Understanding  
+14.25 Key Takeaways  
