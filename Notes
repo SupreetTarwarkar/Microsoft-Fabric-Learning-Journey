@@ -1,21 +1,620 @@
-## 📚 Microsoft Fabric Learning Notes
+# Microsoft Fabric Learning Journey
 
-These notes document my Microsoft Fabric learning journey from core platform
-concepts to building an end-to-end analytics solution.
+> A structured collection of my Microsoft Fabric learning notes — from platform fundamentals and data engineering to semantic modelling, security, monitoring, and end-to-end analytics architecture.
 
-| # | Topic | What I Learned |
-|---|---|---|
-| 01 | [Microsoft Fabric Fundamentals](Notes/01-Microsoft-Fabric-Fundamentals.md) | Fabric architecture, workloads, OneLake and core concepts |
-| 02 | [Fabric Capacity & Workspaces](Notes/02-Fabric-Capacity-and-Workspaces.md) | Capacity, CUs, workspaces, items and workspace roles |
-| 03 | [OneLake, Lakehouse & Delta Tables](Notes/03-OneLake-Lakehouse-and-Delta-Tables.md) | OneLake architecture, Lakehouse concepts and Delta tables |
-| 04 | [Data Ingestion & Pipelines](Notes/04-Data-Ingestion-and-Pipelines.md) | Data ingestion, Copy Activity, pipelines and parameters |
-| 05 | [Notebooks & PySpark](Notes/05-Notebooks-and-PySpark.md) | Spark notebooks, PySpark and data transformations |
-| 06 | [Dataflow Gen2](Notes/06-Dataflow-Gen2.md) | Power Query transformations, destinations and query concepts |
-| 07 | [Medallion Architecture](Notes/07-Medallion-Architecture.md) | Bronze, Silver and Gold architecture |
-| 08 | [Fabric Data Warehouse](Notes/08-Fabric-Data-Warehouse.md) | Warehouse architecture, SQL analytics and Lakehouse vs Warehouse |
-| 09 | [OneLake Shortcuts & Orchestration](Notes/09-OneLake-Shortcuts-and-Orchestration.md) | Shortcuts, data reuse, orchestration and scheduling |
-| 10 | [Data Modelling & Star Schema](Notes/10-Data-Modelling-and-Star-Schema.md) | Fact tables, dimensions, relationships and date tables |
-| 11 | [Power BI & Semantic Models](Notes/11-Power-BI-and-Semantic-Models.md) | Semantic models, Direct Lake, DAX and Power BI reporting |
-| 12 | [Monitoring, Alerts & Debugging](Notes/12-Monitoring-Alerts-and-Debugging.md) | Monitoring Hub, pipeline monitoring, alerts and troubleshooting |
-| 13 | [Security & Governance](Notes/13-Security-and-Governance.md) | RLS, OLS/CLS, OneLake security, lineage and governance |
-| 14 | [End-to-End Fabric Workflow](Notes/14-End-to-End-Fabric-Workflow.md) | Connecting Fabric components into a complete analytics solution |
+---
+
+## About These Notes
+
+These notes document my understanding of Microsoft Fabric from an **end-to-end analytics perspective**.
+
+---
+
+# Learning Map
+
+```mermaid
+flowchart LR
+    A[Microsoft Fabric] --> B[Ingestion]
+    B --> C[Lakehouse / OneLake]
+    C --> D[Transformation]
+    D --> E[Bronze - Silver - Gold]
+    E --> F[Warehouse / Analytical Model]
+    F --> G[Semantic Model]
+    G --> H[Power BI]
+    H --> I[Business Insights]
+
+    C --> J[Shortcuts]
+    D --> K[Notebooks / PySpark]
+    D --> L[Dataflow Gen2]
+
+    I --> M[Monitoring]
+    I --> N[Security & Governance]
+```
+
+---
+
+# Contents
+
+## Part I — Microsoft Fabric Foundations
+
+> Build the foundation first: understand what Microsoft Fabric is, how its architecture works, and how compute, storage, workspaces, and workloads connect.
+
+### Chapter 01 — Microsoft Fabric Fundamentals
+
+[Read Chapter 01 →](Notes/01-Microsoft-Fabric-Fundamentals.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- What is Microsoft Fabric?
+- Fabric as Software as a Service (SaaS)
+- Why Microsoft Fabric?
+- Microsoft Fabric workloads
+- OneLake fundamentals
+- Fabric personas
+- End-to-end Fabric data flow
+- Fabric workspaces
+- Fabric items
+- Fabric Capacity
+- Core terminology
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+### Chapter 02 — Fabric Capacity, Workspaces & Roles
+
+[Read Chapter 02 →](Notes/02-Fabric-Capacity-and-Workspaces.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- Fabric Capacity
+- Capacity Units (CUs)
+- F-SKUs
+- Shared capacity across Fabric workloads
+- Why capacity matters
+- Fabric trial capacity
+- F64 and Power BI
+- Workspace architecture
+- Admin, Member, Contributor and Viewer roles
+- Principle of Least Privilege
+- Workspace access vs data access
+- Capacity monitoring concepts
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+### Chapter 03 — OneLake, Lakehouse & Delta Tables
+
+[Read Chapter 03 →](Notes/03-OneLake-Lakehouse-and-Delta-Tables.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- What is a Lakehouse?
+- Lakehouse architecture in Fabric
+- Files vs Tables
+- OneLake storage
+- Delta Lake
+- Delta Tables
+- Parquet vs Delta
+- Delta transaction log
+- ACID transactions
+- Table versioning
+- Time Travel
+- Schema Enforcement
+- Schema Evolution
+- CRUD and MERGE operations
+- SQL Analytics Endpoint
+- Lakehouse analytical workflow
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+## Part II — Data Integration & Data Engineering
+
+> Learn how data enters Fabric, how workflows are automated, and how raw information is transformed into trusted analytical data.
+
+### Chapter 04 — Data Ingestion & Data Pipelines
+
+[Read Chapter 04 →](Notes/04-Data-Ingestion-and-Pipelines.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- Data Factory in Microsoft Fabric
+- Data ingestion
+- Data Pipelines
+- Data movement vs orchestration
+- Pipeline activities
+- Copy Data Activity
+- Source and destination
+- Connections
+- Column mapping
+- Sequential vs parallel execution
+- Pipeline dependencies
+- Parameters
+- Variables
+- Lookup Activity
+- ForEach Activity
+- If Condition
+- Notebook Activity
+- Dataflow Gen2 Activity
+- Scheduling
+- Pipeline monitoring
+- Error handling
+- Reusable pipeline design
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+### Chapter 05 — Notebooks, Apache Spark & PySpark
+
+[Read Chapter 05 →](Notes/05-Notebooks-and-PySpark.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- Fabric Notebooks
+- Apache Spark
+- PySpark
+- PySpark vs Pandas
+- Spark DataFrames
+- Reading data
+- `display()` vs `show()`
+- Data transformations
+- Filtering
+- Null handling
+- Duplicate handling
+- Data type conversion
+- Creating new columns
+- Writing Delta tables
+- Lazy Evaluation
+- Transformations vs Actions
+- Spark partitions
+- Pipeline + Notebook architecture
+- Data validation
+- Technical success vs business correctness
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+### Chapter 06 — Dataflow Gen2 & Power Query
+
+[Read Chapter 06 →](Notes/06-Dataflow-Gen2.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- What is Dataflow Gen2?
+- Power Query in Fabric
+- Power Query M language
+- Connecting to data sources
+- Applied Steps
+- Data type transformations
+- Filtering rows
+- Removing and renaming columns
+- Handling null values
+- Removing duplicates
+- Replacing values
+- Splitting columns
+- Conditional Columns
+- Custom Columns
+- Merge Queries
+- Append Queries
+- Group By
+- Data destinations
+- Query Folding
+- Transformation order
+- Dataflow refresh
+- Dataflow vs Notebook
+- Dataflow vs Copy Activity
+- Dataflow inside Pipelines
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+### Chapter 07 — Medallion Architecture
+
+[Read Chapter 07 →](Notes/07-Medallion-Architecture.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- What is Medallion Architecture?
+- Why use layered architecture?
+- Bronze Layer
+- Silver Layer
+- Gold Layer
+- Bronze vs Silver vs Gold
+- Data quality across layers
+- Why Bronze should be preserved
+- Why Silver remains reusable
+- Multiple Gold datasets
+- Gold aggregations
+- Granularity
+- Business-ready data
+- KPIs in the Gold layer
+- Gold and Star Schema
+- Delta tables across layers
+- Multiple Lakehouse design
+- Validation between layers
+- Gold reconciliation
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+## Part III — Analytical Storage & Data Access
+
+> Move from engineering-oriented data preparation toward structured analytical storage and efficient data reuse.
+
+### Chapter 08 — Fabric Data Warehouse
+
+[Read Chapter 08 →](Notes/08-Fabric-Data-Warehouse.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- What is a Data Warehouse?
+- Fabric Warehouse
+- SQL-first analytical experience
+- Relational tables
+- Schemas
+- When to use a Warehouse
+- Lakehouse vs Warehouse
+- Using Lakehouse and Warehouse together
+- Views
+- Stored Procedures
+- View vs Stored Procedure
+- SQL aggregations
+- Fact Tables
+- Dimension Tables
+- Warehouse and Power BI
+- Warehouse and Gold Layer
+- Choosing Lakehouse vs Warehouse
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+### Chapter 09 — OneLake Shortcuts & Data Orchestration
+
+[Read Chapter 09 →](Notes/09-OneLake-Shortcuts-and-Orchestration.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- OneLake Shortcuts
+- Why Shortcuts are useful
+- Shortcut vs physical copy
+- Internal Shortcuts
+- External Shortcuts
+- Shortcut vs Copy Activity
+- Source data changes
+- Querying shortcut-backed data
+- Shortcuts in Medallion Architecture
+- Shortcut security concepts
+- Orchestration
+- Pipeline as the orchestrator
+- Notebook scheduling
+- Dataflow Gen2 scheduling
+- Dataflow inside Pipelines
+- Dependency management
+- Reusable pipeline design
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+## Part IV — Data Modelling & Business Intelligence
+
+> Convert trusted data into an analytical model that business users can understand and explore.
+
+### Chapter 10 — Data Modelling, Star Schema & Date Tables
+
+[Read Chapter 10 →](Notes/10-Data-Modelling-and-Star-Schema.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- What is Data Modelling?
+- Why modelling matters
+- Fact Tables
+- Dimension Tables
+- Fact vs Dimension
+- Star Schema
+- One-to-Many relationships
+- Primary Keys
+- Foreign Keys
+- Surrogate Keys
+- Fact table grain
+- Grain-related problems
+- Date Dimension
+- Continuous dates
+- Date relationships
+- Dimension attributes
+- Measures
+- Filter flow
+- Many-to-Many relationships
+- Bi-directional filtering
+- Star Schema vs Flat Table
+- Star Schema vs Snowflake Schema
+- Semantic Models
+- Data Model vs Semantic Model
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+### Chapter 11 — Power BI, Semantic Models & Report Security
+
+[Read Chapter 11 →](Notes/11-Power-BI-and-Semantic-Models.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- Power BI reporting layer
+- Report vs Semantic Model
+- Business-question-driven reporting
+- Measures vs Calculated Columns
+- Filter Context
+- Dimensions and Facts
+- Choosing the correct visual
+- KPI Cards
+- Trend analysis
+- Date tables in reporting
+- Slicers
+- Dynamic report titles
+- Report interactions
+- Report validation
+- Row-Level Security (RLS)
+- Static RLS
+- Dynamic RLS
+- `USERPRINCIPALNAME()`
+- RLS architecture
+- RLS vs OLS / column restrictions
+- Power BI Apps
+- Workspace vs App
+- Direct Lake
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+## Part V — Production Operations
+
+> A solution is not complete when it runs once. Production systems must be observable, maintainable, recoverable, and secure.
+
+### Chapter 12 — Monitoring, Alerts & Debugging
+
+[Read Chapter 12 →](Notes/12-Monitoring-Alerts-and-Debugging.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- Why monitoring matters
+- Monitoring Hub
+- Pipeline status
+- Activity-level monitoring
+- Duration analysis
+- Performance baselines
+- Error details
+- Debugging workflow
+- Common pipeline failures
+- File-not-found errors
+- Authentication errors
+- Schema mismatch
+- Data type errors
+- Timeouts
+- Capacity-related issues
+- Root cause analysis
+- Alerts and notifications
+- Monitoring vs Alerting
+- Alert fatigue
+- Descriptive naming
+- Naming conventions
+- Auto-create tables
+- Development vs Production
+- Retry strategy
+- Dependency handling
+- Operational vs Data Quality monitoring
+- SLA concepts
+- Production documentation
+- Ownership
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+## Part VI — Security & Governance
+
+> Understand not only how to build a Fabric solution, but how to control, protect, trace, and govern it.
+
+### Chapter 13 — Security, Governance & OneLake
+
+[Read Chapter 13 →](Notes/13-Security-and-Governance.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- Security vs Governance
+- Multi-layer Fabric security
+- Workspace roles
+- Principle of Least Privilege
+- Item-level permissions
+- OneLake Security
+- OneLake security roles
+- Table-level security
+- Folder-level security
+- Row-Level Security
+- Column-Level Security
+- Semantic Model security
+- Shortcut security
+- Pass-through identity
+- OneLake Catalog
+- Data discovery
+- Governance visibility
+- Fabric Domains
+- Domain vs Workspace
+- Data Lineage
+- Impact Analysis
+- Ownership
+- Naming standards
+- Documentation
+- Data classification
+- Auditability
+- Development → Test → Production
+- Interview understanding
+- Key takeaways
+
+</details>
+
+---
+
+## Part VII — Putting Everything Together
+
+> The final chapter connects the concepts into one complete Microsoft Fabric analytics workflow.
+
+### Chapter 14 — End-to-End Microsoft Fabric Workflow
+
+[Read Chapter 14 →](Notes/14-End-to-End-Fabric-Workflow.md)
+
+<details>
+<summary><strong>Inside this chapter</strong></summary>
+
+- Understanding the business requirement
+- Business Requirement Document (BRD)
+- Choosing the right Fabric tool
+- Tool-selection decisions
+- Data ingestion
+- Data transformation
+- Business-friendly analytical columns
+- Data storage decisions
+- Semantic modelling
+- Power BI reporting
+- Report storytelling
+- KPI selection
+- Analytical segmentation
+- Count vs Rate
+- Correlation vs Causation
+- Security in project design
+- Column-Level Security
+- Validation
+- End-to-end validation
+- Documentation
+- Learning notes vs project documentation
+- Project evidence
+- Tool-selection interview questions
+- Complete project lifecycle
+- Key takeaways
+
+</details>
+
+---
+
+# Complete Fabric Architecture
+
+```mermaid
+flowchart TD
+
+    A[Business Requirement] --> B[Data Sources]
+
+    B --> C[Data Factory / Pipeline]
+    B --> D[Dataflow Gen2]
+
+    C --> E[Bronze Layer]
+    D --> E
+
+    E --> F[Notebook / PySpark]
+    F --> G[Silver Layer]
+
+    G --> H[Business Transformations]
+    H --> I[Gold Layer]
+
+    I --> J[Lakehouse]
+    I --> K[Fabric Warehouse]
+
+    J --> L[Semantic Model]
+    K --> L
+
+    L --> M[Power BI Report]
+    M --> N[Business Users]
+
+    J -. Data Reuse .-> O[OneLake Shortcuts]
+
+    N --> P[Monitoring]
+    N --> Q[Security & Governance]
+```
+
+---
+
+# Quick Revision Path
+
+If I need a fast revision before an interview:
+
+**Fabric Fundamentals**  
+→ **Lakehouse & Delta**  
+→ **Pipelines**  
+→ **PySpark / Dataflow Gen2**  
+→ **Bronze–Silver–Gold**  
+→ **Lakehouse vs Warehouse**  
+→ **Star Schema**  
+→ **Semantic Model & Power BI**  
+→ **Monitoring**  
+→ **Security & Governance**
+
+---
+
+# Core Mental Model
+
+> **OneLake stores the data.**  
+> **Capacity provides the compute.**  
+> **Workspaces organize the solution.**  
+> **Pipelines orchestrate the workflow.**  
+> **Dataflow Gen2 performs low-code transformations.**  
+> **Notebooks perform code-based transformations.**  
+> **Lakehouse supports flexible data engineering.**  
+> **Warehouse supports structured SQL analytics.**  
+> **Semantic Models provide business meaning.**  
+> **Power BI communicates insights.**  
+> **Monitoring keeps the solution observable.**  
+> **Security & Governance keep the solution controlled.**
+
+---
+
+## Repository Purpose
+
+This repository is my personal reference for understanding Microsoft Fabric architecture and analytics workflows.
+
+Detailed implementation of individual projects is maintained separately under the **Projects** section of this repository.
