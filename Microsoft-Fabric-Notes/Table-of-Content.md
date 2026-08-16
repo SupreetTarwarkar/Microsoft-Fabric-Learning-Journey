@@ -21,7 +21,7 @@
 
 ---
 
-## [Chapter 2 — Fabric Capacity, Workspaces & Roles](2.%20Fabric-Capacity-Workspaces-and-Roles.md)
+## [Chapter 2 : Fabric Capacity, Workspaces & Roles](2.%20Fabric-Capacity-Workspaces-and-Roles.md)
 
 2.1 [Fabric Capacity](2.%20Fabric-Capacity-Workspaces-and-Roles.md#21-fabric-capacity)  
 2.2 [Capacity Units (CU)](2.%20Fabric-Capacity-Workspaces-and-Roles.md#22-capacity-units-cu)  
@@ -40,7 +40,7 @@
 
 ---
 
-## [Chapter 3 — Lakehouse and Delta Tables](3.%20Lakehouse-and-Delta-Tables.md)
+## [Chapter 3 : Lakehouse and Delta Tables](3.%20Lakehouse-and-Delta-Tables.md)
 
 3.1 [What is a Lakehouse?](3.%20Lakehouse-and-Delta-Tables.md#31-what-is-a-lakehouse)  
 3.2 [Why Do We Need a Lakehouse?](3.%20Lakehouse-and-Delta-Tables.md#32-why-do-we-need-a-lakehouse)  
@@ -62,7 +62,7 @@
 
 ---
 
-## [Chapter 4 — Data Factory, Data Pipelines and Data Ingestion](4.%20Data-Factory-Pipelines-and-Ingestion.md)
+## [Chapter 4 : Data Factory, Data Pipelines and Data Ingestion](4.%20Data-Factory-Pipelines-and-Ingestion.md)
 
 4.1 [Data Factory in Microsoft Fabric](4.%20Data-Factory-Pipelines-and-Ingestion.md#41-data-factory-in-microsoft-fabric)  
 4.2 [Data Ingestion](4.%20Data-Factory-Pipelines-and-Ingestion.md#42-data-ingestion)  
@@ -89,7 +89,7 @@
 
 ---
 
-## [Chapter 5 — Notebooks, PySpark and Data Transformation](5.%20Notebooks-PySpark-and-Data-Transformation.md)
+## [Chapter 5 : Notebooks, PySpark and Data Transformation](5.%20Notebooks-PySpark-and-Data-Transformation.md)
 
 5.1 [Fabric Notebooks](5.%20Notebooks-PySpark-and-Data-Transformation.md#51-fabric-notebooks)  
 5.2 [Apache Spark](5.%20Notebooks-PySpark-and-Data-Transformation.md#52-apache-spark)  
@@ -117,7 +117,7 @@
 
 ---
 
-## [Chapter 6 — Medallion Architecture](6.%20Medallion-Architecture.md)
+## [Chapter 6 : Medallion Architecture](6.%20Medallion-Architecture.md)
 
 6.1 [What is Medallion Architecture?](6.%20Medallion-Architecture.md#61-what-is-medallion-architecture)  
 6.2 [Why Use Medallion Architecture?](6.%20Medallion-Architecture.md#62-why-use-medallion-architecture)  
@@ -140,7 +140,7 @@
 
 ---
 
-## [Chapter 7 — Fabric Data Warehouse](7.%20Fabric-Data-Warehouse.md)
+## [Chapter 7 : Fabric Data Warehouse](7.%20Fabric-Data-Warehouse.md)
 
 7.1 [What is a Data Warehouse?](7.%20Fabric-Data-Warehouse.md#71-what-is-a-data-warehouse)  
 7.2 [Fabric Warehouse](7.%20Fabric-Data-Warehouse.md#72-fabric-warehouse)  
@@ -164,7 +164,7 @@
 
 ---
 
-## [Chapter 8 — OneLake Shortcuts and Data Orchestration](8.%20OneLake-Shortcuts-and-Orchestration.md)
+## [Chapter 8 : OneLake Shortcuts and Data Orchestration](8.%20OneLake-Shortcuts-and-Orchestration.md)
 
 8.1 [OneLake Shortcuts](8.%20OneLake-Shortcuts-and-Orchestration.md#81-onelake-shortcuts)  
 8.2 [Why Do We Need Shortcuts?](8.%20OneLake-Shortcuts-and-Orchestration.md#82-why-do-we-need-shortcuts)  
@@ -188,7 +188,7 @@
 
 ---
 
-## [Chapter 9 — Data Modelling, Star Schema and Date Table](9.%20Data-Modelling-Star-Schema-and-Date-Table.md)
+## [Chapter 9 : Data Modelling, Star Schema and Date Table](9.%20Data-Modelling-Star-Schema-and-Date-Table.md)
 
 9.1 [What is Data Modelling?](9.%20Data-Modelling-Star-Schema-and-Date-Table.md#91-what-is-data-modelling)  
 9.2 [Why Data Modelling is Important](9.%20Data-Modelling-Star-Schema-and-Date-Table.md#92-why-data-modelling-is-important)  
@@ -217,7 +217,7 @@
 
 ---
 
-## [Chapter 10 — Dataflow Gen2 and Power Query](10.%20Dataflow-Gen2-and-Power-Query.md)
+## [Chapter 10 : Dataflow Gen2 and Power Query](10.%20Dataflow-Gen2-and-Power-Query.md)
 
 10.1 [Dataflow Gen2](10.%20Dataflow-Gen2-and-Power-Query.md#101-dataflow-gen2)  
 10.2 [Why Use Dataflow Gen2?](10.%20Dataflow-Gen2-and-Power-Query.md#102-why-use-dataflow-gen2)  
@@ -249,7 +249,7 @@
 
 ---
 
-## [Chapter 11 — Power BI, Semantic Models and Report Security](11.%20Power-BI-Semantic-Models-and-Report-Security.md)
+## [Chapter 11 : Power BI, Semantic Models and Report Security](11.%20Power-BI-Semantic-Models-and-Report-Security.md)
 
 11.1 [Power BI Reporting Layer](11.%20Power-BI-Semantic-Models-and-Report-Security.md#111-power-bi-reporting-layer)  
 11.2 [Power BI Report](11.%20Power-BI-Semantic-Models-and-Report-Security.md#112-power-bi-report)  
@@ -279,7 +279,7 @@
 
 ---
 
-## [Chapter 12 — Monitoring, Alerts, Debugging and Production Practices](12.%20Monitoring-Alerts-Debugging-and-Production-Practices.md)
+## [Chapter 12 : Monitoring, Alerts, Debugging and Production Practices](12.%20Monitoring-Alerts-Debugging-and-Production-Practices.md)
 
 12.1 [Why Monitoring Matters](12.%20Monitoring-Alerts-Debugging-and-Production-Practices.md#121-why-monitoring-matters)  
 12.2 [Monitoring Hub](12.%20Monitoring-Alerts-Debugging-and-Production-Practices.md#122-monitoring-hub)  
@@ -312,7 +312,7 @@
 
 ---
 
-## [Chapter 13 — Security, Governance, OneLake Security, Domains and Lineage](13.%20Security-Governance-OneLake-Domains-and-Lineage.md)
+## [Chapter 13 : Security, Governance, OneLake Security, Domains and Lineage](13.%20Security-Governance-OneLake-Domains-and-Lineage.md)
 
 13.1 [Why Security and Governance Matter](13.%20Security-Governance-OneLake-Domains-and-Lineage.md#131-why-security-and-governance-matter)  
 13.2 [Security vs Governance](13.%20Security-Governance-OneLake-Domains-and-Lineage.md#132-security-vs-governance)  
@@ -345,7 +345,7 @@
 
 ---
 
-## [Chapter 14 — End-to-End Microsoft Fabric Project Workflow](14.%20End-to-End-Microsoft-Fabric-Project-Workflow.md)
+## [Chapter 14 : End-to-End Microsoft Fabric Project Workflow](14.%20End-to-End-Microsoft-Fabric-Project-Workflow.md)
 
 14.1 [Purpose of an End-to-End Fabric Project](14.%20End-to-End-Microsoft-Fabric-Project-Workflow.md#141-purpose-of-an-end-to-end-fabric-project)  
 14.2 [Business Requirement](14.%20End-to-End-Microsoft-Fabric-Project-Workflow.md#142-business-requirement)  
