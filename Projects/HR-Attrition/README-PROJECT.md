@@ -51,8 +51,6 @@ Power BI Report
 HR Attrition Insights
 ```
 
-**OneLake Security / Column-Level Security** was also explored to control access to HR data stored within the Lakehouse.
-
 ---
 
 ## Tech Stack
