@@ -438,7 +438,5 @@ Monitoring and alerting can help notify teams when important failures or executi
 7. **Use clear activity names to make debugging easier.**
 
 ```
-
-Paste → **Preview** ek baar check karo → phir **Commit changes**.
 ```
 
