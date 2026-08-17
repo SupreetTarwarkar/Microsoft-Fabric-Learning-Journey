@@ -192,7 +192,7 @@ A **DefaultReader** Lakehouse role was used during testing, and **Column-Level S
 
 - **Department & Job Role:** Sales recorded the highest departmental attrition rate at **20.6%**, followed by Human Resources at **19.0%** and Research & Development at **13.8%**. At the job-role level, **Sales Representatives showed the highest visible attrition rate at 39.8%**.
 
-- **Age, Salary & Demographics:** Employees aged **18–25 recorded the highest age-group attrition at 35.8%**, compared with **9.2%** among employees aged 36–45. Employees in the **Under 3K salary band recorded 28.6% attrition**, versus only **8.9%** for employees earning Above 10K. Male attrition was **17.0%** compared with **14.8%** for females.
+- **Age, Salary & Demographics:** Employees aged **18–25 recorded the highest age-group attrition at 35.8%**, compared with **9.2%** among employees aged 36–45. Employees in the **Under 3K salary band recorded 28.6% attrition**, versus only **8.9%** for employees earning Above 10K. Male employees recorded a 17.0% attrition rate compared with 14.8% for female employees.
 
 - **Work & Employee Patterns:** Employees working **overtime showed 30.5% attrition**, compared with **10.4%** among employees not working overtime. Frequent business travelers recorded **24.9% attrition** versus **8.0%** among non-travel employees, while single employees recorded **25.5% attrition** compared with **12.5%** for married and **10.1%** for divorced employees.
 
