@@ -317,7 +317,7 @@ Special thanks to **Mansi Goel** for guiding this project through her Microsoft 
 
 This project was **completed by following the guided project walkthrough**, with the implementation and documentation done as part of my learning journey.
 
-* **Guided Project:** [https://youtu.be/1Qv8gm0MlXs?si=tC3ppYXCA8mPOKYV]
+* **Guided Project:** [Project Link](https://youtu.be/1Qv8gm0MlXs?si=tC3ppYXCA8mPOKYV)
 * **Microsoft Fabric Learning Series:** [YouTube Playlist](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb)
 * **YouTube Channel:** [Mansi Goel](https://www.youtube.com/@Mansi.goel.offical)
 
