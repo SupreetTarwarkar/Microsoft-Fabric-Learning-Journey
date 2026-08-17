@@ -68,13 +68,13 @@ HR Attrition Insights
 
 ---
 
-## Data Source & Dataset
+### Data Source & Dataset
 
 | Dataset Detail | Description |
 |---|---|
 | **Dataset Type** | HR Employee Attrition Dataset |
 | **Total Records** | 1,470 Employees |
-| **Source** | GitHub-hosted CSV provided with the learning project |
+| **Dataset File** | [View HR Employee Attrition Dataset](Dataset/HR-Employee-Attrition.csv) |
 | **Fabric Table** | `HR_Employees` |
 | **Lakehouse** | `lh_HR` |
 | **Primary Target** | Employee attrition analysis |
