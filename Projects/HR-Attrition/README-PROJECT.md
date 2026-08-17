@@ -198,8 +198,6 @@ A **DefaultReader** Lakehouse role was used during testing, and **Column-Level S
 
 - **Work & Employee Patterns:** Employees working **overtime showed 30.5% attrition**, compared with **10.4%** among employees not working overtime. Frequent business travelers recorded **24.9% attrition** versus **8.0%** among non-travel employees, while single employees recorded **25.5% attrition** compared with **12.5%** for married and **10.1%** for divorced employees.
 
-These findings represent patterns and associations observed in the workforce data and should not be interpreted as proof of causation.
-
 ---
 
 ## Dashboard Walkthrough, Screenshots & Report
