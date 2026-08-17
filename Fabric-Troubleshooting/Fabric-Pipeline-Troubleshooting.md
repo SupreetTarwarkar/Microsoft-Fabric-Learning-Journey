@@ -2,370 +2,491 @@
 
 ## Overview
 
-During my Microsoft Fabric learning journey, I practiced pipeline monitoring and troubleshooting using **Monitoring Hub**, **Pipeline Run Details**, **Activity Duration**, and **Error Details**.
+During my Microsoft Fabric learning journey, I encountered practical issues while working with data pipelines.
 
-The main troubleshooting approach I learned was:
+Instead of focusing only on successfully running a pipeline, I also learned how to investigate failures, understand resource-related problems, verify destination settings, rerun failed processes, and validate the final result.
 
-```text
-Pipeline Run
-     ↓
-Monitor Status
-     ↓
-Identify Failed / Slow Activity
-     ↓
-Open Error Details
-     ↓
-Investigate Root Cause
-     ↓
-Apply Corrective Action
-     ↓
-Rerun
-     ↓
-Validate Result
-```
-
-> **An error message tells us what failed, while debugging helps determine why it failed.**
-
----
-
-## 1. Execution Timeout Expired
-
-### Problem
-
-During a Microsoft Fabric Pipeline run, the following error was encountered:
+The troubleshooting approach I followed was:
 
 ```text
-Execution Timeout Expired
-```
-
-The failure occurred during the:
-
-```text
-BuildGoldLayer
-```
-
-activity.
-
-```text
-Pipeline
-   ↓
-BuildGoldLayer
-   ↓
-Operation taking longer than expected
-   ↓
-Timeout limit reached
-   ↓
-FAILED
-```
-
-The activity was unable to complete within the allowed execution time.
-
-### How I Investigated It
-
-The failed pipeline was investigated using **Microsoft Fabric Monitoring Hub**.
-
-```text
+Pipeline Issue
+      ↓
 Monitoring Hub
       ↓
-Failed Pipeline Run
-      ↓
-BuildGoldLayer
-      ↓
-Error Details
-      ↓
-Execution Timeout Expired
-```
-
-Instead of only checking the pipeline status, I reviewed the activity-level error details.
-
-### Possible Causes Investigated
-
-A timeout does not automatically reveal the root cause.
-
-Possible areas to investigate include:
-
-- Long-running query
-- Large data volume
-- Fabric capacity pressure
-- Warehouse workload
-- Expensive transformation logic
-- Resource availability
-- Connectivity issues
-
-The important question is not only:
-
-> "How do I increase the timeout?"
-
-It is:
-
-> **"Why is this operation taking longer than expected?"**
-
-### Troubleshooting Process
-
-```text
-Open Monitoring Hub
-      ↓
-Locate Failed Pipeline
-      ↓
-Open Failed Activity
+Identify Failed / Affected Activity
       ↓
 Review Error Details
       ↓
-Identify Possible Root Cause
+Identify Root Cause
       ↓
 Apply Corrective Action
       ↓
-Rerun Pipeline
+Rerun
       ↓
-Verify Result
+Validate Result
 ```
 
-### Important Learning
-
-> **Timeout is an error condition, but it may not be the actual root cause.**
-
-The root cause should be investigated before changing timeout settings.
+> **A pipeline failure tells us that something went wrong. Troubleshooting helps identify why it happened and how to resolve it.**
 
 ---
 
-## 2. Capacity / Resource Troubleshooting
+## 1. Capacity / Resource Pressure During Multiple Pipeline Runs
 
-### Scenario
+### Problem
 
-Pipeline execution can be affected when multiple Microsoft Fabric workloads compete for available capacity resources.
+While practicing Microsoft Fabric pipelines, I encountered a situation where multiple pipelines or Fabric workloads were being executed around the same time.
 
-For example:
+When approximately **2–3 pipelines/workloads** were running, the available Fabric capacity became constrained and additional pipeline execution was affected.
+
+Conceptually:
 
 ```text
 Fabric Capacity
       ↓
-Pipeline
-Notebook
-Dataflow Gen2
-Warehouse Query
-Power BI Refresh
+Pipeline 1
+Pipeline 2
+Pipeline 3
+Other Fabric Workloads
+      ↓
+Resource Competition
+      ↓
+Pipeline Execution Affected
 ```
 
-Possible symptoms include:
+This showed that a pipeline can experience execution problems even when its underlying logic is correct.
 
-- Pipeline taking longer than normal
-- Delayed activity execution
-- Timeout-related failures
-- Throttling
-- Resource-related errors
+---
 
-### Troubleshooting Approach
+### What I Investigated
+
+The first step was to determine whether the issue was related to the pipeline logic or the Fabric execution environment.
+
+The investigation included:
+
+- Checking pipeline execution status
+- Reviewing running workloads
+- Checking activity-level information
+- Reviewing error details
+- Considering available Fabric capacity
+- Checking whether multiple workloads were competing for resources
+
+The troubleshooting flow was:
 
 ```text
-Pipeline Failed / Slow
+Pipeline Unable to Run Normally
         ↓
-Open Monitoring Hub
+Check Monitoring Hub
         ↓
-Review Duration
+Review Running Workloads
         ↓
-Open Error Details
+Review Error Details
         ↓
-Check Resource / Capacity Pressure
-        ↓
-Reduce / Optimize / Wait / Retry
-        ↓
-Rerun
-        ↓
-Validate
+Check Capacity / Resource Pressure
 ```
 
-Possible actions include:
+---
 
-- Checking other running workloads
-- Reducing unnecessary concurrent workloads
-- Reviewing Fabric capacity utilization
-- Optimizing expensive transformations
-- Waiting for temporary resource pressure to reduce
-- Rerunning the pipeline
-- Scaling capacity where appropriate
+### Corrective Action
 
-### Important Clarification
+When capacity pressure was suspected, unnecessary concurrent workloads were reduced or allowed to complete before retrying the affected pipeline.
+
+Conceptually:
 
 ```text
-Stopping Capacity ≠ Debugging
+Multiple Workloads Running
+        ↓
+Capacity Pressure
+        ↓
+Reduce / Complete Unnecessary Workloads
+        ↓
+Allow Resources to Become Available
+        ↓
+Rerun Pipeline
+        ↓
+Validate Execution
 ```
 
-Stopping or reducing another workload may be one troubleshooting action, but debugging is the complete process:
+The important point was not simply to rerun the pipeline repeatedly.
 
-```text
-Identify Problem
-      ↓
-Find Root Cause
-      ↓
-Apply Fix
-      ↓
-Rerun
-      ↓
-Verify
-```
+The execution environment also needed to be checked.
+
+---
+
+### Validation
+
+After reducing the workload pressure, the pipeline was rerun and checked again.
+
+Validation included:
+
+- Pipeline status
+- Activity status
+- Execution completion
+- Output availability
+- Downstream processing
+
+---
 
 ### Key Learning
 
-> **Resource pressure should be investigated before assuming that the pipeline logic itself is incorrect.**
+> **Pipeline performance and execution depend not only on pipeline logic, but also on the Fabric capacity available to execute the workload.**
+
+Running several workloads simultaneously can create resource competition.
+
+This introduced an important production-level concept:
+
+```text
+Correct Pipeline Logic
+        +
+Available Compute Resources
+        =
+Reliable Pipeline Execution
+```
 
 ---
 
-## 3. Abnormal Pipeline Duration
+## 2. Existing Destination Table / Auto-Create Table Conflict
 
-### Scenario
+### Problem
 
-A pipeline can complete successfully but still require investigation if its execution time suddenly increases.
+Another issue occurred while loading data through a Fabric Pipeline into a SQL/Warehouse destination.
 
-Example:
+The destination table had already been created, but the pipeline configuration was attempting to create the table again.
 
-| Run | Duration | Status |
-|---|---:|---|
-| Run 1 | 3m 04s | Success |
-| Run 2 | 2m 59s | Success |
-| Run 3 | 3m 10s | Success |
-| Run 4 | 3m 15s | Success |
-| Run 5 | 12m 40s | Success |
-
-The final run is technically successful, but its duration is significantly higher than normal.
-
-### Why It Matters
-
-Checking only:
+Conceptually:
 
 ```text
-Status = Success
+SQL / Warehouse
+      ↓
+Destination Table Already Exists
+      ↓
+Pipeline Runs
+      ↓
+Pipeline Attempts to Create Destination Table
+      ↓
+Table Creation Conflict
 ```
 
-is not enough.
+The issue was therefore not with the source data itself.
 
-A Data Engineer should also ask:
+The problem was related to the **destination configuration and table-creation behavior**.
 
-> **"Why did the pipeline suddenly take much longer than normal?"**
+---
 
-Possible reasons include:
+### What I Investigated
 
-- Increased data volume
-- Slow source system
-- Capacity pressure
-- Expensive transformation
-- Query performance degradation
-- Dependency or source issue
-
-### Investigation
+The destination configuration was reviewed to understand whether the pipeline should:
 
 ```text
-Monitoring Hub
-      ↓
-Pipeline History
-      ↓
-Compare Duration
-      ↓
-Identify Slow Activity
-      ↓
-Investigate Change
+Create a New Table
 ```
+
+or:
+
+```text
+Load Data into an Existing Table
+```
+
+The following areas were checked:
+
+- Destination Warehouse / SQL location
+- Existing destination table
+- Table name
+- Destination configuration
+- Auto-create table behavior
+- Column mapping
+- Source and destination schema
+
+---
+
+### Root Cause
+
+The destination table already existed, while the pipeline was configured in a way that attempted to create the destination table again.
+
+This created a conflict between:
+
+```text
+Existing Table
+      VS
+Pipeline Table Creation
+```
+
+---
+
+### Corrective Action
+
+The destination settings were reviewed so that the pipeline could work with the existing table instead of unnecessarily attempting to create another table.
+
+The approach was:
+
+```text
+Check Destination
+      ↓
+Does the Table Already Exist?
+      ↓
+YES
+      ↓
+Use Existing Destination Table
+      ↓
+Avoid Unnecessary Auto-Create Behavior
+      ↓
+Verify Column Mapping
+      ↓
+Rerun Pipeline
+```
+
+This also highlighted the importance of understanding the **Auto Create Table** option.
+
+Auto-create can be useful when the destination table does not already exist, especially for quick ingestion or staging scenarios.
+
+However, it should not be used blindly when the destination schema has already been designed.
+
+---
+
+### Validation
+
+After correcting the destination configuration, the pipeline was rerun.
+
+The following checks were important:
+
+- Correct table selected
+- No duplicate table creation attempt
+- Column mapping aligned correctly
+- Data loaded into the intended destination
+- Pipeline completed successfully
+
+---
 
 ### Key Learning
 
-> **Successful execution does not automatically mean healthy execution.**
+> **Before running a pipeline, always confirm whether the destination table should be created or whether the pipeline should load into an existing table.**
 
-Pipeline monitoring should include:
+A useful decision is:
 
 ```text
-Status
-+
-Duration
+Does Destination Table Exist?
+          ↓
+     YES       NO
+      ↓         ↓
+Use Existing   Create New
+Table          Table
 ```
 
----
-
-## 4. Monitoring vs Alerting vs Debugging
-
-| Area | Main Question |
-|---|---|
-| **Monitoring** | What happened? |
-| **Alerting** | Tell me when something important happens |
-| **Debugging** | Why did it fail and how do I fix it? |
-| **Performance Monitoring** | Why is it taking longer than normal? |
+This prevents unnecessary destination and schema conflicts.
 
 ---
 
-## 5. Practical Pipeline Debugging Checklist
+## 3. Pipeline Monitoring and Debugging Approach
+
+These issues also helped me understand that troubleshooting should follow a structured process rather than randomly changing pipeline settings.
 
 ### Step 1 — Check Monitoring Hub
 
-Review:
+Start by reviewing:
 
 - Pipeline name
 - Run status
 - Start time
 - End time
 - Duration
+- Activity status
 
-### Step 2 — Open Pipeline Run Details
+---
 
-Identify which activity:
+### Step 2 — Identify the Affected Activity
 
-- Failed
-- Became slow
-- Did not execute
+A pipeline may contain several activities.
 
-### Step 3 — Read Error Details
+Instead of treating the complete pipeline as one failure, identify the specific activity that is affected.
 
-Do not troubleshoot only from:
+```text
+Pipeline
+   ↓
+Activity 1
+   ↓
+Activity 2
+   ↓
+FAILED ACTIVITY
+   ↓
+Activity 4
+```
+
+---
+
+### Step 3 — Review Error Details
+
+A status such as:
 
 ```text
 FAILED
 ```
 
-Open the actual **Error Details**.
+only tells us that something went wrong.
 
-### Step 4 — Identify the Error Category
+The **Error Details** should be reviewed to understand what should actually be investigated.
 
-Check whether the issue is related to:
+---
+
+### Step 4 — Identify the Root-Cause Category
+
+Depending on the error, the issue may be related to:
 
 ```text
-File
+Source
 Connection
 Permission
-Code
 SQL
 Schema
 Data
+Destination
 Capacity
 Timeout
 Dependency
 ```
 
-### Step 5 — Identify the Root Cause
-
-Remember:
+The important principle is:
 
 ```text
-Error ≠ Root Cause
+Error Message
+      ≠
+Root Cause
 ```
 
-### Step 6 — Apply the Fix
-
-Fix the underlying issue rather than only the visible symptom.
-
-### Step 7 — Rerun
-
-Rerun the failed pipeline or activity.
-
-### Step 8 — Validate
-
-Verify:
-
-- Successful status
-- Expected duration
-- Correct output
-- Correct destination
-- Downstream processing
+The visible error may only be a symptom of a deeper problem.
 
 ---
 
-## 6. Production-Level Practices
+### Step 5 — Apply the Corrective Action
+
+Once the likely root cause is identified, the appropriate fix should be applied.
+
+Examples from my learning included:
+
+```text
+Capacity Pressure
+      ↓
+Reduce Concurrent Workloads
+      ↓
+Retry
+```
+
+and:
+
+```text
+Destination Table Already Exists
+      ↓
+Correct Destination Configuration
+      ↓
+Use Existing Table
+      ↓
+Rerun
+```
+
+---
+
+### Step 6 — Rerun
+
+After applying the corrective action, rerun the affected pipeline or activity.
+
+---
+
+### Step 7 — Validate
+
+A successful rerun should still be validated.
+
+Check:
+
+- Pipeline status
+- Activity status
+- Duration
+- Destination table
+- Loaded data
+- Downstream output
+
+The complete process becomes:
+
+```text
+Detect
+   ↓
+Investigate
+   ↓
+Identify Root Cause
+   ↓
+Fix
+   ↓
+Rerun
+   ↓
+Validate
+```
+
+---
+
+## 4. Monitoring vs Debugging
+
+| Area | Main Question |
+|---|---|
+| **Monitoring** | What happened? |
+| **Error Details** | What error was reported? |
+| **Debugging** | Why did it happen and how can it be fixed? |
+| **Validation** | Did the corrective action actually resolve the issue? |
+
+---
+
+## 5. Practical Pipeline Debugging Checklist
+
+When a Microsoft Fabric Pipeline behaves unexpectedly:
+
+### 1. Check Monitoring Hub
+
+Identify the pipeline run and its status.
+
+### 2. Check the Activity
+
+Determine which activity failed or was affected.
+
+### 3. Review Error Details
+
+Read the actual error instead of troubleshooting only from the failed status.
+
+### 4. Check the Environment
+
+Ask:
+
+- Are multiple workloads running?
+- Is Fabric capacity under pressure?
+- Is the destination available?
+
+### 5. Check the Destination
+
+Ask:
+
+- Does the destination table already exist?
+- Should the pipeline create a new table?
+- Is Auto Create Table required?
+- Is the correct table selected?
+- Does the schema match?
+- Is column mapping correct?
+
+### 6. Identify the Root Cause
+
+Do not immediately change random pipeline settings.
+
+Understand the actual reason for the failure first.
+
+### 7. Apply the Fix
+
+Correct the underlying issue.
+
+### 8. Rerun
+
+Run the pipeline again.
+
+### 9. Validate
+
+Confirm that the pipeline completed and produced the expected result.
+
+---
+
+## 6. Production-Level Practices Learned
 
 ### Use Descriptive Activity Names
 
@@ -380,15 +501,17 @@ Activity2
 use names such as:
 
 ```text
-CopyRawSalesCSV
+CopyRawSalesData
 TransformBronzeToSilver
 BuildGoldLayer
 LoadSalesToWarehouse
 ```
 
-Clear activity names make troubleshooting easier in Monitoring Hub.
+Clear names make failed activities easier to identify during troubleshooting.
 
-### Monitor Duration
+---
+
+### Monitor More Than Success or Failure
 
 Do not monitor only:
 
@@ -396,44 +519,88 @@ Do not monitor only:
 Succeeded / Failed
 ```
 
-Also monitor:
+Also review:
 
 ```text
+Activity Status
 Execution Duration
+Error Details
 ```
 
-A successful pipeline that suddenly takes significantly longer than normal may still require investigation.
+---
 
-### Review Error Details
+### Validate Destination Configuration
 
-A failed status tells us that something went wrong.
+Before executing a load, understand:
 
-**Error Details** help identify what should actually be investigated.
+```text
+Source
+   ↓
+Transformation
+   ↓
+Destination
+   ↓
+Existing Table OR New Table
+```
 
-### Use Alerting Where Appropriate
+This reduces destination and schema-related problems.
 
-In production environments, engineers cannot manually monitor every pipeline.
+---
 
-Monitoring and alerting can help notify teams when important failures or execution events occur.
+### Consider Capacity
+
+Multiple Fabric workloads may share the same available capacity.
+
+Therefore, pipeline troubleshooting should consider both:
+
+```text
+Pipeline Logic
++
+Execution Environment
+```
+
+---
+
+### Rerun Is Not the Final Step
+
+The complete process is:
+
+```text
+Fix
+ ↓
+Rerun
+ ↓
+Validate
+```
+
+A pipeline showing **Success** should still be checked to confirm that the expected data reached the correct destination.
 
 ---
 
 ## 7. Troubleshooting Summary
 
-| Scenario | What Happened | Investigation |
-|---|---|---|
-| **Execution Timeout Expired** | `BuildGoldLayer` exceeded its execution time | Monitoring Hub → Failed Activity → Error Details → Root-Cause Analysis |
-| **Capacity / Resource Pressure** | Pipeline execution can be affected by competing workloads | Check capacity, workload pressure, duration, and error details |
-| **Abnormal Pipeline Duration** | Pipeline succeeds but execution time increases significantly | Compare historical duration and identify slow activity |
+| Issue | What Happened | Root Cause / Area | Corrective Approach |
+|---|---|---|---|
+| **Capacity / Resource Pressure** | Multiple pipelines/workloads affected available execution resources | Fabric capacity / concurrent workloads | Reduce workload pressure, retry, rerun and validate |
+| **Existing Table / Auto-Create Conflict** | Destination table already existed while pipeline attempted table creation | Destination configuration | Use existing table, review Auto Create behavior, verify mapping and rerun |
 
 ---
 
 ## Key Takeaways
 
-1. **Always review Error Details when a pipeline fails.**
-2. **An error message is not always the root cause.**
-3. **Use Monitoring Hub to investigate pipeline and activity runs.**
-4. **Monitor pipeline duration along with success or failure status.**
-5. **Fix the underlying issue before rerunning the pipeline.**
-6. **Validate the result after every troubleshooting action.**
-7. **Use clear activity names to make debugging easier.**
+1. **Pipeline failures should be investigated through Monitoring Hub and activity-level details.**
+
+2. **A pipeline can fail even when its logic is correct if available Fabric capacity is constrained.**
+
+3. **Running multiple workloads simultaneously can create resource competition.**
+
+4. **Always verify whether a destination table already exists before enabling table creation behavior.**
+
+5. **Auto Create Table is useful in appropriate scenarios, but it should not be used blindly.**
+
+6. **Error messages should lead to root-cause investigation rather than random configuration changes.**
+
+7. **After every fix, rerun the pipeline and validate both the execution status and the resulting data.**
+
+8. **Practical troubleshooting is an important part of building reliable Microsoft Fabric data pipelines.**
+9. 
