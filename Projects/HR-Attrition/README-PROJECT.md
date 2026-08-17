@@ -204,7 +204,7 @@ A **DefaultReader** Lakehouse role was used during testing, and **Column-Level S
 
 ### Power BI Report
 
-[View Live Power BI Report](ADD-POWER-BI-REPORT-LINK)
+Due to current **Power BI / Microsoft Fabric license limitations**, a publicly accessible live report link is currently unavailable.
 
 ### Home Page
 
