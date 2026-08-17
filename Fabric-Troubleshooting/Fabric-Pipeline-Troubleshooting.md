@@ -2,43 +2,87 @@
 
 ## Overview
 
-During my Microsoft Fabric learning journey, I encountered practical issues while working with data pipelines.
+During my Microsoft Fabric learning journey, I encountered three practical issues while working with data pipelines.
 
-Instead of focusing only on successfully running a pipeline, I also learned how to investigate failures, understand resource-related problems, verify destination settings, rerun failed processes, and validate the final result.
+These issues helped me understand that pipeline troubleshooting is not only about reading an error message. It also involves identifying the actual root cause, correcting the configuration or environment, rerunning the pipeline, and validating the result.
 
-The troubleshooting approach I followed was:
+### Issues Encountered
 
-```text
-Pipeline Issue
-      ↓
-Monitoring Hub
-      ↓
-Identify Failed / Affected Activity
-      ↓
-Review Error Details
-      ↓
-Identify Root Cause
-      ↓
-Apply Corrective Action
-      ↓
-Rerun
-      ↓
-Validate Result
-```
-
-> **A pipeline failure tells us that something went wrong. Troubleshooting helps identify why it happened and how to resolve it.**
+1. Token / Authentication Error after Password Change
+2. Capacity / Resource Pressure while Running Multiple Pipelines
+3. Existing Destination Table / Auto-Create Table Conflict
 
 ---
 
-## 1. Capacity / Resource Pressure During Multiple Pipeline Runs
+## 1. Token / Authentication Error After Password Change
 
-### Problem
+### Error / Issue
 
-While practicing Microsoft Fabric pipelines, I encountered a situation where multiple pipelines or Fabric workloads were being executed around the same time.
+While running a pipeline, I encountered a **token / authentication-related error** and the pipeline was unable to connect successfully.
 
-When approximately **2–3 pipelines/workloads** were running, the available Fabric capacity became constrained and additional pipeline execution was affected.
+Initially, the exact reason for the authentication failure was not clear.
 
-Conceptually:
+### What Happened
+
+The pipeline connection had already been configured and was working earlier.
+
+Later, the administrator changed the password associated with the source/user account.
+
+The existing authentication information used by the Fabric connection was therefore no longer valid.
+
+```text
+Pipeline Run
+      ↓
+Token / Authentication Error
+      ↓
+Connection Could Not Authenticate
+      ↓
+Root Cause Investigation
+      ↓
+Admin Had Changed Password
+      ↓
+Existing Authentication Became Invalid
+```
+
+### Root Cause
+
+The password had been changed by the administrator, but the existing Fabric connection was still using the previous authentication information.
+
+Therefore, the pipeline could no longer authenticate successfully.
+
+### Resolution
+
+The connection authentication was updated using the new credentials.
+
+After updating the authentication information:
+
+```text
+Update Credentials
+      ↓
+Re-authenticate Connection
+      ↓
+Verify Connection
+      ↓
+Rerun Pipeline
+      ↓
+Successful Execution
+```
+
+### Key Learning
+
+> **An authentication or token error may be caused by a change outside the pipeline itself.**
+
+When a previously working connection suddenly fails, credentials, tokens, account changes, and source-system authentication should also be investigated.
+
+---
+
+## 2. Capacity / Resource Pressure While Running Multiple Pipelines
+
+### Error / Issue
+
+While practicing Microsoft Fabric pipelines, I encountered a situation where approximately **2–3 pipelines/workloads were running around the same time**.
+
+The available Fabric capacity became constrained and pipeline execution was affected.
 
 ```text
 Fabric Capacity
@@ -46,113 +90,66 @@ Fabric Capacity
 Pipeline 1
 Pipeline 2
 Pipeline 3
-Other Fabric Workloads
+Other Workloads
       ↓
 Resource Competition
       ↓
 Pipeline Execution Affected
 ```
 
-This showed that a pipeline can experience execution problems even when its underlying logic is correct.
+### What Happened
 
----
+The pipeline logic itself was not necessarily the problem.
 
-### What I Investigated
+Multiple workloads were competing for the available Fabric resources, which affected the execution of additional workloads.
 
-The first step was to determine whether the issue was related to the pipeline logic or the Fabric execution environment.
+### Root Cause
 
-The investigation included:
+The issue was related to **available Fabric capacity / resource pressure** caused by multiple workloads executing concurrently.
 
-- Checking pipeline execution status
-- Reviewing running workloads
-- Checking activity-level information
-- Reviewing error details
-- Considering available Fabric capacity
-- Checking whether multiple workloads were competing for resources
+### Resolution
 
-The troubleshooting flow was:
+The running workloads were reviewed and unnecessary workload pressure was reduced.
 
-```text
-Pipeline Unable to Run Normally
-        ↓
-Check Monitoring Hub
-        ↓
-Review Running Workloads
-        ↓
-Review Error Details
-        ↓
-Check Capacity / Resource Pressure
-```
-
----
-
-### Corrective Action
-
-When capacity pressure was suspected, unnecessary concurrent workloads were reduced or allowed to complete before retrying the affected pipeline.
-
-Conceptually:
+The affected pipeline was then retried after resources became available.
 
 ```text
 Multiple Workloads Running
-        ↓
+      ↓
 Capacity Pressure
-        ↓
+      ↓
+Review Running Workloads
+      ↓
 Reduce / Complete Unnecessary Workloads
-        ↓
-Allow Resources to Become Available
-        ↓
+      ↓
+Resources Become Available
+      ↓
 Rerun Pipeline
-        ↓
-Validate Execution
+      ↓
+Validate
 ```
-
-The important point was not simply to rerun the pipeline repeatedly.
-
-The execution environment also needed to be checked.
-
----
-
-### Validation
-
-After reducing the workload pressure, the pipeline was rerun and checked again.
-
-Validation included:
-
-- Pipeline status
-- Activity status
-- Execution completion
-- Output availability
-- Downstream processing
-
----
 
 ### Key Learning
 
-> **Pipeline performance and execution depend not only on pipeline logic, but also on the Fabric capacity available to execute the workload.**
+> **A pipeline can experience execution problems even when its logic is correct if sufficient compute resources are not available.**
 
-Running several workloads simultaneously can create resource competition.
-
-This introduced an important production-level concept:
+Pipeline troubleshooting should therefore consider both:
 
 ```text
-Correct Pipeline Logic
-        +
-Available Compute Resources
-        =
-Reliable Pipeline Execution
+Pipeline Logic
+      +
+Execution Environment
 ```
 
 ---
 
-## 2. Existing Destination Table / Auto-Create Table Conflict
+## 3. Existing Destination Table / Auto-Create Table Conflict
 
-### Problem
+### Error / Issue
 
-Another issue occurred while loading data through a Fabric Pipeline into a SQL/Warehouse destination.
+Another issue occurred while loading data through a pipeline into a SQL/Warehouse destination.
 
-The destination table had already been created, but the pipeline configuration was attempting to create the table again.
-
-Conceptually:
+The required destination table had already been created, but the pipeline configuration was attempting to create the table again.
 
 ```text
 SQL / Warehouse
@@ -161,104 +158,62 @@ Destination Table Already Exists
       ↓
 Pipeline Runs
       ↓
-Pipeline Attempts to Create Destination Table
+Pipeline Attempts Table Creation Again
       ↓
-Table Creation Conflict
+Destination Conflict
 ```
 
-The issue was therefore not with the source data itself.
+### What Happened
 
-The problem was related to the **destination configuration and table-creation behavior**.
+The destination table already existed in the SQL/Warehouse environment.
 
----
-
-### What I Investigated
-
-The destination configuration was reviewed to understand whether the pipeline should:
-
-```text
-Create a New Table
-```
-
-or:
-
-```text
-Load Data into an Existing Table
-```
-
-The following areas were checked:
-
-- Destination Warehouse / SQL location
-- Existing destination table
-- Table name
-- Destination configuration
-- Auto-create table behavior
-- Column mapping
-- Source and destination schema
-
----
+However, the pipeline destination configuration was set in a way that attempted to create the destination table again instead of simply loading data into the existing table.
 
 ### Root Cause
 
-The destination table already existed, while the pipeline was configured in a way that attempted to create the destination table again.
+The issue was related to the destination configuration.
 
-This created a conflict between:
+There was a conflict between:
 
 ```text
-Existing Table
-      VS
+Existing Destination Table
+          VS
 Pipeline Table Creation
 ```
 
----
+### Resolution
 
-### Corrective Action
+The destination settings were reviewed and the existing table was used instead of unnecessarily creating another table.
 
-The destination settings were reviewed so that the pipeline could work with the existing table instead of unnecessarily attempting to create another table.
+The following areas were checked:
 
-The approach was:
+- Correct destination table
+- Auto Create Table setting
+- Table name
+- Column mapping
+- Source and destination schema
+
+The corrected flow was:
 
 ```text
 Check Destination
       ↓
-Does the Table Already Exist?
+Table Already Exists?
       ↓
 YES
       ↓
-Use Existing Destination Table
+Use Existing Table
       ↓
-Avoid Unnecessary Auto-Create Behavior
-      ↓
-Verify Column Mapping
+Verify Mapping / Schema
       ↓
 Rerun Pipeline
+      ↓
+Validate Data Load
 ```
-
-This also highlighted the importance of understanding the **Auto Create Table** option.
-
-Auto-create can be useful when the destination table does not already exist, especially for quick ingestion or staging scenarios.
-
-However, it should not be used blindly when the destination schema has already been designed.
-
----
-
-### Validation
-
-After correcting the destination configuration, the pipeline was rerun.
-
-The following checks were important:
-
-- Correct table selected
-- No duplicate table creation attempt
-- Column mapping aligned correctly
-- Data loaded into the intended destination
-- Pipeline completed successfully
-
----
 
 ### Key Learning
 
-> **Before running a pipeline, always confirm whether the destination table should be created or whether the pipeline should load into an existing table.**
+> **Before configuring a pipeline destination, confirm whether the table should be created by the pipeline or whether an existing table should be used.**
 
 A useful decision is:
 
@@ -271,335 +226,99 @@ Use Existing   Create New
 Table          Table
 ```
 
-This prevents unnecessary destination and schema conflicts.
+Auto Create Table can be convenient, but it should be used only when table creation is actually required.
 
 ---
 
-## 3. Pipeline Monitoring and Debugging Approach
+## Troubleshooting Approach
 
-These issues also helped me understand that troubleshooting should follow a structured process rather than randomly changing pipeline settings.
-
-### Step 1 — Check Monitoring Hub
-
-Start by reviewing:
-
-- Pipeline name
-- Run status
-- Start time
-- End time
-- Duration
-- Activity status
-
----
-
-### Step 2 — Identify the Affected Activity
-
-A pipeline may contain several activities.
-
-Instead of treating the complete pipeline as one failure, identify the specific activity that is affected.
+For these issues, I learned to follow a structured troubleshooting process rather than changing settings randomly.
 
 ```text
-Pipeline
-   ↓
-Activity 1
-   ↓
-Activity 2
-   ↓
-FAILED ACTIVITY
-   ↓
-Activity 4
-```
-
----
-
-### Step 3 — Review Error Details
-
-A status such as:
-
-```text
-FAILED
-```
-
-only tells us that something went wrong.
-
-The **Error Details** should be reviewed to understand what should actually be investigated.
-
----
-
-### Step 4 — Identify the Root-Cause Category
-
-Depending on the error, the issue may be related to:
-
-```text
-Source
-Connection
-Permission
-SQL
-Schema
-Data
-Destination
-Capacity
-Timeout
-Dependency
-```
-
-The important principle is:
-
-```text
-Error Message
-      ≠
-Root Cause
-```
-
-The visible error may only be a symptom of a deeper problem.
-
----
-
-### Step 5 — Apply the Corrective Action
-
-Once the likely root cause is identified, the appropriate fix should be applied.
-
-Examples from my learning included:
-
-```text
-Capacity Pressure
+Pipeline Issue
       ↓
-Reduce Concurrent Workloads
+Open Monitoring Hub
       ↓
-Retry
-```
-
-and:
-
-```text
-Destination Table Already Exists
+Identify Failed / Affected Activity
       ↓
-Correct Destination Configuration
+Review Error Details
       ↓
-Use Existing Table
-      ↓
-Rerun
-```
-
----
-
-### Step 6 — Rerun
-
-After applying the corrective action, rerun the affected pipeline or activity.
-
----
-
-### Step 7 — Validate
-
-A successful rerun should still be validated.
-
-Check:
-
-- Pipeline status
-- Activity status
-- Duration
-- Destination table
-- Loaded data
-- Downstream output
-
-The complete process becomes:
-
-```text
-Detect
-   ↓
-Investigate
-   ↓
 Identify Root Cause
-   ↓
-Fix
-   ↓
-Rerun
-   ↓
-Validate
+      ↓
+Apply Corrective Action
+      ↓
+Rerun Pipeline
+      ↓
+Validate Result
 ```
 
----
+### What to Check
 
-## 4. Monitoring vs Debugging
+When a pipeline fails or behaves unexpectedly, I check:
 
-| Area | Main Question |
-|---|---|
-| **Monitoring** | What happened? |
-| **Error Details** | What error was reported? |
-| **Debugging** | Why did it happen and how can it be fixed? |
-| **Validation** | Did the corrective action actually resolve the issue? |
-
----
-
-## 5. Practical Pipeline Debugging Checklist
-
-When a Microsoft Fabric Pipeline behaves unexpectedly:
-
-### 1. Check Monitoring Hub
-
-Identify the pipeline run and its status.
-
-### 2. Check the Activity
-
-Determine which activity failed or was affected.
-
-### 3. Review Error Details
-
-Read the actual error instead of troubleshooting only from the failed status.
-
-### 4. Check the Environment
-
-Ask:
-
-- Are multiple workloads running?
-- Is Fabric capacity under pressure?
-- Is the destination available?
-
-### 5. Check the Destination
-
-Ask:
-
-- Does the destination table already exist?
-- Should the pipeline create a new table?
-- Is Auto Create Table required?
-- Is the correct table selected?
-- Does the schema match?
-- Is column mapping correct?
-
-### 6. Identify the Root Cause
-
-Do not immediately change random pipeline settings.
-
-Understand the actual reason for the failure first.
-
-### 7. Apply the Fix
-
-Correct the underlying issue.
-
-### 8. Rerun
-
-Run the pipeline again.
-
-### 9. Validate
-
-Confirm that the pipeline completed and produced the expected result.
+- Pipeline run status
+- Failed or affected activity
+- Error details
+- Execution duration
+- Source connection
+- Authentication
+- Destination configuration
+- Existing tables
+- Schema and column mapping
+- Running Fabric workloads
+- Capacity / resource pressure
 
 ---
 
-## 6. Production-Level Practices Learned
+## Error vs Root Cause
 
-### Use Descriptive Activity Names
-
-Instead of:
+One of the most important lessons from troubleshooting was:
 
 ```text
-Copy1
-Notebook1
-Activity2
+Error Message ≠ Root Cause
 ```
 
-use names such as:
+For example:
 
 ```text
-CopyRawSalesData
-TransformBronzeToSilver
-BuildGoldLayer
-LoadSalesToWarehouse
+Token / Authentication Error
+          ↓
+Actual Root Cause
+          ↓
+Password Changed by Administrator
 ```
 
-Clear names make failed activities easier to identify during troubleshooting.
+Similarly:
+
+```text
+Pipeline Unable to Run Normally
+          ↓
+Actual Root Cause
+          ↓
+Capacity / Resource Pressure
+```
+
+The visible error is the starting point of the investigation, not always the final explanation.
 
 ---
 
-### Monitor More Than Success or Failure
+## Troubleshooting Summary
 
-Do not monitor only:
-
-```text
-Succeeded / Failed
-```
-
-Also review:
-
-```text
-Activity Status
-Execution Duration
-Error Details
-```
-
----
-
-### Validate Destination Configuration
-
-Before executing a load, understand:
-
-```text
-Source
-   ↓
-Transformation
-   ↓
-Destination
-   ↓
-Existing Table OR New Table
-```
-
-This reduces destination and schema-related problems.
-
----
-
-### Consider Capacity
-
-Multiple Fabric workloads may share the same available capacity.
-
-Therefore, pipeline troubleshooting should consider both:
-
-```text
-Pipeline Logic
-+
-Execution Environment
-```
-
----
-
-### Rerun Is Not the Final Step
-
-The complete process is:
-
-```text
-Fix
- ↓
-Rerun
- ↓
-Validate
-```
-
-A pipeline showing **Success** should still be checked to confirm that the expected data reached the correct destination.
-
----
-
-## 7. Troubleshooting Summary
-
-| Issue | What Happened | Root Cause / Area | Corrective Approach |
-|---|---|---|---|
-| **Capacity / Resource Pressure** | Multiple pipelines/workloads affected available execution resources | Fabric capacity / concurrent workloads | Reduce workload pressure, retry, rerun and validate |
-| **Existing Table / Auto-Create Conflict** | Destination table already existed while pipeline attempted table creation | Destination configuration | Use existing table, review Auto Create behavior, verify mapping and rerun |
+| Issue | Root Cause | Resolution |
+|---|---|---|
+| **Token / Authentication Error** | Administrator changed the password and existing authentication became invalid | Updated credentials, re-authenticated connection and reran pipeline |
+| **Capacity / Resource Pressure** | Multiple pipelines/workloads were competing for available Fabric resources | Reduced workload pressure, retried pipeline and validated execution |
+| **Existing Table / Auto-Create Conflict** | Destination table already existed while pipeline attempted table creation | Used existing table, reviewed Auto Create settings and verified mapping |
 
 ---
 
 ## Key Takeaways
 
-1. **Pipeline failures should be investigated through Monitoring Hub and activity-level details.**
-
-2. **A pipeline can fail even when its logic is correct if available Fabric capacity is constrained.**
-
-3. **Running multiple workloads simultaneously can create resource competition.**
-
-4. **Always verify whether a destination table already exists before enabling table creation behavior.**
-
-5. **Auto Create Table is useful in appropriate scenarios, but it should not be used blindly.**
-
-6. **Error messages should lead to root-cause investigation rather than random configuration changes.**
-
-7. **After every fix, rerun the pipeline and validate both the execution status and the resulting data.**
-
-8. **Practical troubleshooting is an important part of building reliable Microsoft Fabric data pipelines.**
+1. **Always review the actual error details before applying a fix.**
+2. **Authentication failures can be caused by credential or account changes outside the pipeline.**
+3. **Pipeline execution depends on available Fabric capacity as well as correct pipeline logic.**
+4. **Multiple concurrent workloads can create resource pressure.**
+5. **Always verify whether a destination table already exists before creating a new one.**
+6. **Auto Create Table should be used only when automatic table creation is actually required.**
+7. **An error message is not always the root cause.**
+8. **After applying a fix, rerun the pipeline and validate the final result.**
