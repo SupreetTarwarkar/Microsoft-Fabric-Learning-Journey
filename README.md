@@ -150,7 +150,7 @@ Special thanks to **Mansi Goel** for creating and sharing the structured Microso
 
 ## Author
 
-Supreet Tarwarkar
+**Supreet Tarwarkar**
 
-GitHub: https://github.com/SupreetTarwarkar
-LinkedIn: https://www.linkedin.com/in/supreettarwarkar/
+- GitHub: https://github.com/SupreetTarwarkar
+- LinkedIn: https://www.linkedin.com/in/supreettarwarkar/
