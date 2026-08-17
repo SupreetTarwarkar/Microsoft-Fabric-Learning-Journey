@@ -308,6 +308,8 @@ HR-Attrition/
 
 Special thanks to **Mansi Goel** for creating and sharing the structured Microsoft Fabric learning series, practical demonstrations, and guided project content that supported this learning journey.
 
+**Microsoft Fabric Learning Series:** [YouTube Playlist](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=ED_ED28rtBpcGFmQ)
+
 ---
 
 ## Author
