@@ -31,7 +31,7 @@ HR teams need a centralized analytical solution to understand where attrition is
 ## Solution Architecture
 
 ```text
-HR Employee Dataset
+ HR_Attrition.csv
         ↓
 Dataflow Gen2
         ↓
