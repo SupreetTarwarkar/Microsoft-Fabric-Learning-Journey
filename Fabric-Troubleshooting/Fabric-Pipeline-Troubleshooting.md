@@ -1,5 +1,3 @@
-Haan bhai, **isi blank area me ye pura code paste kar**:
-
 ````markdown
 # Microsoft Fabric Pipeline Troubleshooting
 
