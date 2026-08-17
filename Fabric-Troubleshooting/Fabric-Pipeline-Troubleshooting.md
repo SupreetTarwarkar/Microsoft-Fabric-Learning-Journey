@@ -603,4 +603,3 @@ A pipeline showing **Success** should still be checked to confirm that the expec
 7. **After every fix, rerun the pipeline and validate both the execution status and the resulting data.**
 
 8. **Practical troubleshooting is an important part of building reliable Microsoft Fabric data pipelines.**
-9. 
