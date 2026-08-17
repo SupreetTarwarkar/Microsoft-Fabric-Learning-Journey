@@ -202,8 +202,11 @@ A **DefaultReader** Lakehouse role was used during testing, and **Column-Level S
 
 ### Power BI Report
 
-The complete Power BI report file is available in the PowerBI folder. A publicly accessible live report link is currently unavailable due to Power BI / Microsoft Fabric license limitations.
+The complete Power BI report file is available in the **PowerBI** folder.
+
 [Download Power BI Report](PowerBI/HR%20Attrition%20Analysis.pbix)
+
+A publicly accessible live report link is currently unavailable due to Power BI / Microsoft Fabric license limitations.
 
 ### Home Page
 
