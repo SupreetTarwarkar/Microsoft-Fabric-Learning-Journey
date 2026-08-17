@@ -142,9 +142,13 @@ The videos and demonstrations were used as the primary learning resource for und
 
 ## 6. Acknowledgement
 
-Special thanks to **Mansi Goel** for creating and sharing the structured Microsoft Fabric learning series, practical demonstrations, and guided project content that supported this learning journey.
+Special thanks to **Mansi Goel** for creating and sharing the Microsoft Fabric learning series and guided project demonstrations.
 
-**[Microsoft Fabric Learning Series : Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
+The notes and implementations in this repository were **learned, extracted, and documented while following the video series**.
+
+* **YouTube Channel:** [Mansi Goel](https://www.youtube.com/@Mansi.goel.offical?utm_source=chatgpt.com)
+* **Learning Series Playlist:** [Microsoft Fabric Learning Series](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=j0UU7DJIFF5fATOX&utm_source=chatgpt.com)
+
 
 ---
 
