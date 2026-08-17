@@ -104,11 +104,11 @@ Data preparation was performed using **Dataflow Gen2** and **Power Query** befor
 |---|---|
 | **Headers** | Promoted and standardized column headers |
 | **Data Types** | Corrected column data types |
-| **Age Segmentation** | Created Age Group categories for analysis |
+| **Age Segmentation** | Created Age Group categories for demographic analysis |
 | **Income Segmentation** | Created Salary Band categories |
 | **Categorical Values** | Standardized values for reporting |
 | **Business Travel** | Converted technical values into cleaner business labels |
-| **Reporting Fields** | Prepared fields required for dashboard segmentation |
+| **Reporting Fields** | Prepared reporting fields for dashboard analysis and segmentation |
 | **Destination** | Loaded transformed data into `HR_Employees` |
 
 Example of value standardization:
