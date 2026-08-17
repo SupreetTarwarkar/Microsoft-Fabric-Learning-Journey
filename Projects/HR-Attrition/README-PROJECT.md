@@ -2,17 +2,23 @@
 
 ## Project Overview
 
-The **HR Attrition Analysis** project is an end-to-end HR analytics solution developed using **Microsoft Fabric** and **Power BI** to analyze employee attrition patterns across departments, job roles, salary bands, demographics, business travel, and overtime.
+The **HR Attrition Analysis** project is an end-to-end HR analytics solution developed using **Microsoft Fabric** and **Power BI** to analyze employee attrition across departments, job roles, salary bands, demographics, business travel, and overtime.
 
-The solution uses **Dataflow Gen2** and **Power Query** for data preparation, a **Fabric Lakehouse** for analytical storage, a **Semantic Model** for reporting logic, and **Power BI** for interactive HR attrition analysis.
+The project transforms employee data into an interactive analytical solution that helps identify workforce segments showing comparatively higher attrition patterns.
+
+- Built an end-to-end **HR Attrition Analytics solution** to analyze **1,470 employee records** across department, job role, salary, age, demographics, business travel, and overtime.
+
+- Used **Microsoft Fabric, Dataflow Gen2, Power Query, Fabric Lakehouse, Semantic Model, DAX, Power BI, OneLake, and Column-Level Security** to ingest, transform, model, analyze, visualize, and secure HR data.
+
+- Identified an overall **16.1% attrition rate**, with particularly high attrition among **Sales Representatives (39.8%)**, employees aged **18–25 (35.8%)**, employees working overtime **(30.5%)**, and employees in the **Under 3K salary band (28.6%)**.
 
 ---
 
 ## Business Problem
 
-Employee attrition can create recruitment costs, knowledge loss, productivity disruption, and workforce planning challenges. HR teams need a centralized analytical view to understand where attrition is concentrated and which employee segments show comparatively higher attrition rates.
+Employee attrition can create workforce planning challenges, recruitment costs, productivity disruption, and loss of organizational knowledge.
 
-This project analyzes workforce data to identify important attrition patterns and support more informed HR investigation and workforce planning.
+HR teams need a centralized analytical solution to understand where attrition is concentrated and which employee groups show comparatively higher attrition rates across factors such as department, job role, compensation, age, travel frequency, and overtime.
 
 ---
 
@@ -20,9 +26,9 @@ This project analyzes workforce data to identify important attrition patterns an
 
 - Measure the overall employee attrition rate and number of employees leaving the organization.
 - Compare attrition across departments and job roles.
-- Evaluate attrition across different salary bands.
-- Analyze demographic patterns across age groups, gender, education field, and marital status.
-- Examine attrition patterns associated with business travel and overtime.
+- Evaluate employee attrition across different salary bands.
+- Analyze attrition patterns across age groups, gender, education field, and marital status.
+- Examine differences in attrition based on business travel and overtime.
 - Provide interactive filtering for deeper workforce analysis.
 - Build an end-to-end HR analytics workflow using Microsoft Fabric and Power BI.
 
@@ -31,111 +37,117 @@ This project analyzes workforce data to identify important attrition patterns an
 ## Solution Architecture
 
 ```text
-GitHub-hosted HR Dataset
+HR Employee Dataset
         ↓
 Dataflow Gen2
         ↓
 Power Query Transformation
         ↓
 Fabric Lakehouse
-     (lh_HR)
+      (lh_HR)
         ↓
 HR_Employees Table
         ↓
 Semantic Model
-   (HR Semantic)
+    (HR Semantic)
         ↓
 Power BI Report
 (HR Attrition Analysis)
         ↓
-Interactive HR Insights
+HR Attrition Insights
 ```
 
-**OneLake Security** was also explored for controlling access to the Lakehouse data.
+**OneLake Security** was also explored to control access to HR data stored within the Lakehouse.
 
 ---
 
 ## Tech Stack
 
-- **Microsoft Fabric** : End-to-end analytics platform used for data preparation, storage, semantic modeling, security, and reporting.
-- **Dataflow Gen2** : Used to ingest and transform the HR employee dataset.
-- **Power Query** : Used for data cleaning, type changes, derived columns, and value standardization.
+- **Microsoft Fabric** : End-to-end analytics platform used to build and manage the HR analytics solution.
+- **Dataflow Gen2** : Used for data ingestion and Power Query-based transformation.
+- **Power Query** : Used for data cleaning, value standardization, data type management, and derived analytical fields.
 - **Fabric Lakehouse** : Used to store the transformed `HR_Employees` table.
-- **OneLake** : Underlying Fabric data storage layer for the Lakehouse.
+- **OneLake** : Used as the underlying Fabric data storage layer.
 - **Semantic Model** : Used as the analytical layer between the Lakehouse data and Power BI report.
 - **Power BI** : Used to develop the interactive HR Attrition dashboard.
-- **DAX** : Used for KPI and attrition-related business calculations.
-- **Data Modeling** : Used to organize the analytical structure for reporting.
-- **Column-Level Security (CLS)** : Tested through OneLake Security to restrict access to selected data.
+- **DAX** : Used to create attrition-related KPIs and business calculations.
+- **Data Modeling** : Used to organize the data for analytical reporting.
+- **Column-Level Security (CLS)** : Tested through OneLake Security for controlling access to selected HR data.
 
 ---
 
 ## Data Source
 
-The project uses an HR employee dataset provided through a GitHub-hosted CSV source.
+The project uses an **HR employee attrition dataset** containing **1,470 employee records**.
 
-**Source provided for the project:**
+The dataset includes employee-related information such as:
 
-https://raw.githubusercontent.com/the-mansi-goel/FABRIC/refs/heads/main/sales_data.csv
-
-The analysis covers:
-
-- **1,470 employees**
-- Employee attrition status
+- Attrition Status
 - Age
 - Department
 - Job Role
 - Monthly Income
-- Business Travel
-- Education Field
+- Salary-related information
 - Gender
+- Education Field
 - Marital Status
+- Business Travel
 - Overtime
-- Employee tenure-related information
-- Additional HR attributes used for workforce analysis
+- Employee Tenure
+- Additional workforce attributes
+
+The data was used to analyze both overall workforce attrition and segment-level differences.
 
 ---
 
 ## Data Preparation & Transformation
 
-Data preparation was performed using **Dataflow Gen2 and Power Query** before loading the transformed data into the Fabric Lakehouse.
+Data preparation was performed using **Dataflow Gen2** and **Power Query** before loading the transformed data into the Fabric Lakehouse.
 
 Key transformation activities included:
 
 - Promoting and standardizing column headers.
-- Correcting data types.
-- Creating report-ready derived columns.
-- Preparing employee segmentation fields used in the dashboard.
+- Correcting column data types.
 - Standardizing categorical values.
-- Replacing business travel values with cleaner reporting labels.
-- Preparing Age Group and Salary Band categories for analytical reporting.
-- Loading the transformed data into the `HR_Employees` Lakehouse table.
+- Creating reporting-friendly derived columns.
+- Creating employee **Age Groups** for demographic analysis.
+- Creating **Salary Bands** for compensation-based attrition analysis.
+- Preparing fields required for dashboard segmentation.
+- Standardizing Business Travel values for clearer reporting.
 
-One visible example of value standardization was converting:
+For example:
 
-`Travel_Frequently` → `Frequently`
+```text
+Travel_Frequently
+        ↓
+Frequently
+```
 
-This made categorical values easier to understand in the final report.
+The transformed dataset was then loaded into the **`HR_Employees`** Lakehouse table.
 
 ---
 
 ## Data Model / Semantic Model
 
-A dedicated semantic model named **`HR Semantic`** was created for the Power BI reporting layer.
+A dedicated Semantic Model named **`HR Semantic`** was created for the reporting layer.
 
-The model is centered on the **`HR_Employees`** table and contains the employee attributes required for attrition analysis.
+The model uses the **`HR_Employees`** table as the primary analytical table and contains the employee attributes required for workforce analysis.
 
-The analytical model supports:
+The model supports:
 
-- Employee headcount analysis
-- Employees-left calculations
-- Attrition rate calculations
-- Average income analysis
-- Attrition segmentation
-- Dashboard filtering
-- DAX-based KPI calculations
+- Total Headcount
+- Employees Left
+- Employees Stayed
+- Attrition Rate
+- Average Monthly Income
+- Average Tenure of Leavers
+- Department analysis
+- Job Role analysis
+- Salary Band analysis
+- Demographic analysis
+- Interactive report filtering
 
-The semantic model acts as the analytical layer between the Fabric Lakehouse and the Power BI dashboard.
+The Semantic Model provides the analytical layer between the **Fabric Lakehouse** and the final **Power BI report**.
 
 ---
 
@@ -143,7 +155,7 @@ The semantic model acts as the analytical layer between the Fabric Lakehouse and
 
 ### Home Page
 
-The Home page provides an introduction to the HR Attrition dashboard and separates the analysis into two major areas:
+The Home page introduces the HR Attrition project and organizes the dashboard into two major analytical sections.
 
 **Overview**
 
@@ -162,19 +174,17 @@ The Home page provides an introduction to the HR Attrition dashboard and separat
 - Business Travel
 - Overtime
 
-The page also highlights key questions such as:
+The page also highlights major analytical questions such as:
 
 - What is the overall attrition rate?
-- Which departments are losing the most employees?
-- How does attrition vary across pay and age groups?
-
----
+- Which departments are experiencing higher attrition?
+- How does attrition vary across salary and age groups?
 
 ### Overview
 
-The Overview page provides the primary HR attrition KPIs and organizational breakdowns.
+The Overview page provides the primary workforce KPIs and organizational attrition analysis.
 
-#### Main KPIs
+**Main KPIs**
 
 - Attrition Rate
 - Employees Left
@@ -183,27 +193,24 @@ The Overview page provides the primary HR attrition KPIs and organizational brea
 - Average Tenure of Leavers
 - Overall Attrition Distribution
 
-#### Analysis
+**Analysis Areas**
 
 - Attrition Rate by Department
 - Attrition Decomposition
 - Attrition by Job Role
 - Attrition by Salary Band
 
-#### Interactive Filters
+**Interactive Filters**
 
 - Department
 - Gender
 - Salary Band
-- Clear All Slicers
-
----
 
 ### Deep Dive
 
-The Deep Dive page provides employee-level segmentation analysis across several HR dimensions.
+The Deep Dive page provides detailed employee segmentation analysis.
 
-#### Analysis Areas
+**Analysis Areas**
 
 - Attrition by Age Group
 - Attrition by Gender
@@ -212,7 +219,7 @@ The Deep Dive page provides employee-level segmentation analysis across several 
 - Attrition by Business Travel
 - Attrition by Overtime
 
-The page helps identify employee groups showing comparatively higher or lower attrition rates.
+This page helps identify workforce groups showing comparatively higher or lower attrition rates.
 
 ---
 
@@ -231,33 +238,33 @@ The page helps identify employee groups showing comparatively higher or lower at
 
 ## Key Business Insights
 
-- The organization recorded an overall **16.1% attrition rate**, with **237 employees leaving out of 1,470 employees**.
+- The organization recorded an overall **16.1% attrition rate**, with **237 employees leaving out of a total workforce of 1,470 employees**.
 
-- **Sales** showed the highest departmental attrition rate at **20.6%**, followed by **Human Resources at 19.0%** and **Research & Development at 13.8%**.
+- **Sales** recorded the highest departmental attrition rate at **20.6%**, followed by **Human Resources at 19.0%** and **Research & Development at 13.8%**.
 
-- The **Sales Representative** role showed the highest visible job-role attrition rate at **39.8%**, followed by **Laboratory Technician at 23.9%** and **Human Resources at 23.1%**.
+- **Sales Representatives** showed the highest visible job-role attrition rate at **39.8%**, followed by **Laboratory Technicians at 23.9%** and **Human Resources roles at 23.1%**.
 
-- Employees in the **Under 3K salary band** recorded the highest salary-based attrition rate at **28.6%**, compared with only **8.9%** among employees earning **Above 10K**.
+- Employees aged **18–25** recorded the highest age-group attrition rate at **35.8%**, compared with only **9.2%** among employees aged **36–45**.
 
-- Employees aged **18–25** showed the highest age-group attrition rate at **35.8%**, while employees aged **36–45** recorded a substantially lower rate of **9.2%**.
+- Employees in the **Under 3K salary band** recorded a **28.6% attrition rate**, compared with **8.9%** among employees earning **Above 10K**.
 
-- Employees working **overtime** showed an attrition rate of **30.5%**, compared with **10.4%** for employees who did not work overtime.
+- Employees working **overtime** showed a **30.5% attrition rate**, nearly three times the **10.4% rate** among employees who did not work overtime.
 
-- Employees who traveled **frequently for business** recorded a **24.9% attrition rate**, compared with **15.0%** for employees who traveled rarely and **8.0%** for non-travel employees.
+- Employees who traveled **frequently for business** recorded a **24.9% attrition rate**, compared with **15.0%** for employees who traveled rarely and **8.0%** among non-travel employees.
 
 - **Single employees** recorded a **25.5% attrition rate**, compared with **12.5% for married employees** and **10.1% for divorced employees**.
 
-These findings show associations within the workforce data and highlight employee segments that may warrant further HR investigation; they do not by themselves establish causation.
+These results highlight associations within the workforce data and help identify employee groups that may require further HR investigation. They do not independently establish causation.
 
 ---
 
 ## Security Implementation
 
-**OneLake Security** was practically explored as part of the project.
+**OneLake Security** was practically explored as part of the project to understand how access to sensitive HR information can be controlled.
 
-A **DefaultReader** Lakehouse role was used to test data access, and **Column-Level Security (CLS) constraints** were applied to the `HR_Employees` table.
+A Lakehouse **DefaultReader** role was used during security testing, and **Column-Level Security (CLS)** constraints were applied to the `HR_Employees` table.
 
-This demonstrated how access to sensitive HR information can be controlled at the data level within Microsoft Fabric.
+This demonstrates how access to selected employee information can be restricted while maintaining access to other analytical data.
 
 ---
 
@@ -265,135 +272,138 @@ This demonstrated how access to sensitive HR information can be controlled at th
 
 ### Home Page
 
-![Home Page](Screenshots/22b92b72-7a76-40cc-90f4-396062041daa.jpg)
+![Home Page](Screenshots/1.%20Home%20Page.jpg)
 
 ### Overview
 
-![Overview](Screenshots/2.%20Over%20View(1).jpg)
+![Overview](Screenshots/2.%20Over%20View.jpg)
 
 ### Deep Dive
 
-![Deep Dive](Screenshots/3.%20Deep%20Drive(1).jpg)
+![Deep Dive](Screenshots/3.%20Deep%20Dive.jpg)
 
 ### Column-Level Security
 
-![Column-Level Security](Screenshots/4.%20CLS(1).jpg)
+![Column-Level Security](Screenshots/4.%20CLS.jpg)
 
 ### Microsoft Fabric Workspace
 
-![Microsoft Fabric Workspace](Screenshots/5.%20Workspace_HR(1).jpg)
+![Microsoft Fabric Workspace](Screenshots/5.%20Workspace_HR.jpg)
 
 ### Fabric Lakehouse
 
-![Fabric Lakehouse](Screenshots/6.%20Lakehouse_HR(1).jpg)
+![Fabric Lakehouse](Screenshots/6.%20Lakehouse_HR.jpg)
 
 ### Semantic Model
 
-![Semantic Model](Screenshots/7.%20Semantic%20Model(1).jpg)
+![Semantic Model](Screenshots/7.%20Semantic%20Model.jpg)
 
 ### Dataflow Gen2
 
-![Dataflow Gen2](Screenshots/8.%20Data%20flow%20gen%202(1).jpg)
+![Dataflow Gen2](Screenshots/8.%20Dataflow%20Gen2.jpg)
 
 ---
 
 ## Dataset
 
-The project uses the HR employee dataset analyzed across **1,470 employees**.
+The project uses an HR employee dataset containing **1,470 employee records**.
 
-The dataset contains employee-level information covering areas such as:
+The dataset supports analysis across:
 
-- Attrition
-- Age
 - Department
 - Job Role
-- Income
-- Education
+- Salary
+- Age
 - Gender
+- Education Field
 - Marital Status
 - Business Travel
 - Overtime
-- Employee tenure
+- Employee Attrition
+- Employee Tenure
 
-The source dataset was provided through GitHub and is intended to be maintained in the project's **Dataset** folder.
+The dataset file is maintained within the project's **Dataset** folder.
 
 ---
 
 ## Microsoft Fabric Implementation
 
-The project demonstrates an end-to-end Microsoft Fabric workflow.
-
 ### Dataflow Gen2
 
-Dataflow Gen2 was used to connect to the source data and perform Power Query-based transformations.
+**Dataflow Gen2** was used to connect to the source data and perform Power Query-based data preparation and transformation.
 
 ### Fabric Lakehouse
 
-The transformed employee data was loaded into the **`lh_HR`** Lakehouse.
+The transformed employee dataset was loaded into the Fabric Lakehouse:
 
-The primary analytical table is:
+`lh_HR`
+
+The primary analytical table created inside the Lakehouse is:
 
 `HR_Employees`
 
 ### OneLake
 
-The Lakehouse data is stored within the broader Microsoft Fabric OneLake architecture.
+The Lakehouse participates in the broader **Microsoft Fabric OneLake architecture**, providing centralized analytical storage for the project.
 
 ### Semantic Model
 
-The **`HR Semantic`** model was created on top of the employee data to support Power BI analysis and DAX calculations.
+The **`HR Semantic`** Semantic Model was created on top of the employee data to support DAX calculations and Power BI reporting.
 
 ### OneLake Security
 
-OneLake Security was explored using Lakehouse roles and Column-Level Security constraints to control access to HR data.
+OneLake Security was explored using Lakehouse security roles and Column-Level Security constraints for HR data access.
 
 ### Power BI
 
-The final report, **`HR Attrition Analysis`**, was created in Power BI and organized into:
+The final **HR Attrition Analysis** report was developed in Power BI with three report pages:
 
 - Home
 - Overview
 - Deep Dive
 
-This completed the analytical workflow from source data to business insight.
+The complete workflow connects data ingestion, transformation, storage, semantic modeling, security, and reporting within Microsoft Fabric.
 
 ---
 
 ## Power BI Report
 
-The Power BI report file for this project is:
+The complete Power BI report file is:
 
 `HR Attrition Analysis.pbix`
 
-The report contains:
+The report allows users to explore:
 
-- Interactive HR dashboard pages
-- Attrition KPIs
+- HR Attrition KPIs
+- Department-level attrition
+- Job Role analysis
+- Salary Band analysis
+- Employee demographic patterns
+- Business Travel patterns
+- Overtime patterns
+- Interactive slicers
 - DAX calculations
-- Employee segmentation analysis
-- Dashboard slicers
-- Semantic-model-based reporting
-- Interactive visualizations
+- Semantic Model-based reporting
 
-The project repository contains a dedicated **PowerBI** folder for report-related files.
+The report file is maintained in the project's **PowerBI** folder.
 
 ---
 
 ## Project Walkthrough Video
 
-A complete project walkthrough is available at:
+A complete walkthrough of the Microsoft Fabric and Power BI implementation is available at:
 
 https://drive.google.com/file/d/14C08ETxHqKhELwHhBPkMjArpU0i3gC5C/view?usp=sharing
 
-The walkthrough demonstrates the major components of the solution, including:
+The walkthrough covers:
 
 - Dataflow Gen2
 - Power Query transformations
 - Fabric Lakehouse
 - Semantic Model
 - OneLake Security
-- Power BI dashboard
-- HR attrition analysis
+- Power BI dashboard development
+- HR Attrition analysis
 
 ---
 
@@ -406,7 +416,7 @@ HR-Attrition/
 ├── PowerBI/
 ├── Screenshots/
 ├── Video/
-└── README-PROJECT
+└── README.md
 ```
 
 ---
@@ -430,11 +440,9 @@ HR-Attrition/
 
 ---
 
-## 6. Acknowledgement
+## Acknowledgements
 
 Special thanks to **Mansi Goel** for creating and sharing the structured Microsoft Fabric learning series, practical demonstrations, and guided project content that supported this learning journey.
-
-**[Microsoft Fabric Learning Series : Mansi Goel](https://youtu.be/1Qv8gm0MlXs?si=TGtZzPqr_BKwD5sH)**
 
 ---
 
