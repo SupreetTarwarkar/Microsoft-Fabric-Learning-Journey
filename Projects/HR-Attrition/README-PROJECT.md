@@ -202,11 +202,12 @@ A **DefaultReader** Lakehouse role was used during testing, and **Column-Level S
 
 ### Power BI Report
 
-Due to current **Power BI / Microsoft Fabric license limitations**, a publicly accessible live report link is currently unavailable.
+The complete Power BI report file is available in the PowerBI folder. A publicly accessible live report link is currently unavailable due to Power BI / Microsoft Fabric license limitations.
+[Download Power BI Report](PowerBI/HR%20Attrition%20Analysis.pbix)
 
 ### Home Page
 
-![Home Page](Screenshots/1.%20Home%20Page.jpg)
+![Home Page](Screenshots/1.%20Home.jpg)
 
 The Home Page introduces the HR Attrition dashboard and separates the analysis into two major areas:
 
@@ -223,7 +224,7 @@ The page also highlights key analytical questions such as:
 
 ### Overview
 
-![Overview](Screenshots/2.%20Overview.jpg)
+![Overview](Screenshots/2.%20Over%20View.jpg)
 
 The Overview page provides the main workforce KPIs and organizational attrition analysis.
 
@@ -247,7 +248,7 @@ The Overview page provides the main workforce KPIs and organizational attrition 
 
 ### Deep Dive
 
-![Deep Dive](Screenshots/3.%20Deep%20Dive.jpg)
+![Deep Dive](Screenshots/3.%20Deep%20Drive.jpg)
 
 The Deep Dive page provides detailed employee segmentation analysis across:
 
