@@ -266,9 +266,9 @@ This page helps identify workforce segments showing comparatively higher or lowe
 
 ### Project Walkthrough Video
 
-A complete walkthrough of the Microsoft Fabric and Power BI implementation is available below:
+The complete project walkthrough is available in the **Video** folder.
 
-[Watch Project Walkthrough](https://drive.google.com/file/d/14C08ETxHqKhELwHhBPkMjArpU0i3gC5C/view?usp=sharing)
+[View Project Walkthrough Video](Video/README.md)
 
 The walkthrough covers the end-to-end implementation from data preparation and Fabric storage to semantic modeling, security, and final Power BI analysis.
 
