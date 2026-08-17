@@ -76,6 +76,8 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 
 The concepts learned during this journey are organized into topic-wise notes for revision and future reference.
 
+**[View Microsoft Fabric Notes & Table of Contents](Microsoft-Fabric-Notes/00.%20Table-of-Content.md)**
+
 ### Learning Approach
 
 **Learn → Reinforce → Practice → Document → Build → Showcase**
@@ -87,7 +89,6 @@ The concepts learned during this journey are organized into topic-wise notes for
 - Learning documented in GitHub
 - Concepts applied through guided project work
 - Final work organized for portfolio showcase
-
 ---
 
 ## 3. HR Attrition Guided Project
