@@ -127,7 +127,7 @@ Frequently
 
 **Dataflow Gen2** was used to connect to the source data and perform Power Query-based data preparation and transformation.
 
-![Dataflow Gen2](Screenshots/8.%20Dataflow%20Gen2.jpg)
+![Dataflow Gen2](Screenshots/8.%20Data%20flow%20gen%202.jpg)
 
 ### Fabric Lakehouse
 
@@ -139,7 +139,7 @@ The main analytical table created inside the Lakehouse is:
 
 `HR_Employees`
 
-![Fabric Lakehouse](Screenshots/6.%20Lakehouse%20HR.jpg)
+![Fabric Lakehouse](Screenshots/6.%20Lakehouse_HR.jpg)
 
 ### Semantic Model
 
