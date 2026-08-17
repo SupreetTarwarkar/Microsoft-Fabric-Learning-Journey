@@ -1,4 +1,3 @@
-````markdown
 # Microsoft Fabric Pipeline Troubleshooting
 
 ## Overview
@@ -23,7 +22,7 @@ Apply Corrective Action
 Rerun
      ↓
 Validate Result
-````
+```
 
 > **An error message tells us what failed, while debugging helps determine why it failed.**
 
@@ -85,13 +84,13 @@ A timeout does not automatically reveal the root cause.
 
 Possible areas to investigate include:
 
-* Long-running query
-* Large data volume
-* Fabric capacity pressure
-* Warehouse workload
-* Expensive transformation logic
-* Resource availability
-* Connectivity issues
+- Long-running query
+- Large data volume
+- Fabric capacity pressure
+- Warehouse workload
+- Expensive transformation logic
+- Resource availability
+- Connectivity issues
 
 The important question is not only:
 
@@ -149,11 +148,11 @@ Power BI Refresh
 
 Possible symptoms include:
 
-* Pipeline taking longer than normal
-* Delayed activity execution
-* Timeout-related failures
-* Throttling
-* Resource-related errors
+- Pipeline taking longer than normal
+- Delayed activity execution
+- Timeout-related failures
+- Throttling
+- Resource-related errors
 
 ### Troubleshooting Approach
 
@@ -177,13 +176,13 @@ Validate
 
 Possible actions include:
 
-* Checking other running workloads
-* Reducing unnecessary concurrent workloads
-* Reviewing Fabric capacity utilization
-* Optimizing expensive transformations
-* Waiting for temporary resource pressure to reduce
-* Rerunning the pipeline
-* Scaling capacity where appropriate
+- Checking other running workloads
+- Reducing unnecessary concurrent workloads
+- Reviewing Fabric capacity utilization
+- Optimizing expensive transformations
+- Waiting for temporary resource pressure to reduce
+- Rerunning the pipeline
+- Scaling capacity where appropriate
 
 ### Important Clarification
 
@@ -219,13 +218,13 @@ A pipeline can complete successfully but still require investigation if its exec
 
 Example:
 
-| Run   | Duration | Status  |
-| ----- | -------: | ------- |
-| Run 1 |   3m 04s | Success |
-| Run 2 |   2m 59s | Success |
-| Run 3 |   3m 10s | Success |
-| Run 4 |   3m 15s | Success |
-| Run 5 |  12m 40s | Success |
+| Run | Duration | Status |
+|---|---:|---|
+| Run 1 | 3m 04s | Success |
+| Run 2 | 2m 59s | Success |
+| Run 3 | 3m 10s | Success |
+| Run 4 | 3m 15s | Success |
+| Run 5 | 12m 40s | Success |
 
 The final run is technically successful, but its duration is significantly higher than normal.
 
@@ -245,12 +244,12 @@ A Data Engineer should also ask:
 
 Possible reasons include:
 
-* Increased data volume
-* Slow source system
-* Capacity pressure
-* Expensive transformation
-* Query performance degradation
-* Dependency or source issue
+- Increased data volume
+- Slow source system
+- Capacity pressure
+- Expensive transformation
+- Query performance degradation
+- Dependency or source issue
 
 ### Investigation
 
@@ -282,12 +281,12 @@ Duration
 
 ## 4. Monitoring vs Alerting vs Debugging
 
-| Area                       | Main Question                            |
-| -------------------------- | ---------------------------------------- |
-| **Monitoring**             | What happened?                           |
-| **Alerting**               | Tell me when something important happens |
-| **Debugging**              | Why did it fail and how do I fix it?     |
-| **Performance Monitoring** | Why is it taking longer than normal?     |
+| Area | Main Question |
+|---|---|
+| **Monitoring** | What happened? |
+| **Alerting** | Tell me when something important happens |
+| **Debugging** | Why did it fail and how do I fix it? |
+| **Performance Monitoring** | Why is it taking longer than normal? |
 
 ---
 
@@ -297,19 +296,19 @@ Duration
 
 Review:
 
-* Pipeline name
-* Run status
-* Start time
-* End time
-* Duration
+- Pipeline name
+- Run status
+- Start time
+- End time
+- Duration
 
 ### Step 2 — Open Pipeline Run Details
 
 Identify which activity:
 
-* Failed
-* Became slow
-* Did not execute
+- Failed
+- Became slow
+- Did not execute
 
 ### Step 3 — Read Error Details
 
@@ -358,11 +357,11 @@ Rerun the failed pipeline or activity.
 
 Verify:
 
-* Successful status
-* Expected duration
-* Correct output
-* Correct destination
-* Downstream processing
+- Successful status
+- Expected duration
+- Correct output
+- Correct destination
+- Downstream processing
 
 ---
 
@@ -403,6 +402,8 @@ Also monitor:
 Execution Duration
 ```
 
+A successful pipeline that suddenly takes significantly longer than normal may still require investigation.
+
 ### Review Error Details
 
 A failed status tells us that something went wrong.
@@ -419,11 +420,11 @@ Monitoring and alerting can help notify teams when important failures or executi
 
 ## 7. Troubleshooting Summary
 
-| Scenario                         | What Happened                                                | Investigation                                                          |
-| -------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
-| **Execution Timeout Expired**    | `BuildGoldLayer` exceeded its execution time                 | Monitoring Hub → Failed Activity → Error Details → Root-Cause Analysis |
-| **Capacity / Resource Pressure** | Pipeline execution can be affected by competing workloads    | Check capacity, workload pressure, duration, and error details         |
-| **Abnormal Pipeline Duration**   | Pipeline succeeds but execution time increases significantly | Compare historical duration and identify slow activity                 |
+| Scenario | What Happened | Investigation |
+|---|---|---|
+| **Execution Timeout Expired** | `BuildGoldLayer` exceeded its execution time | Monitoring Hub → Failed Activity → Error Details → Root-Cause Analysis |
+| **Capacity / Resource Pressure** | Pipeline execution can be affected by competing workloads | Check capacity, workload pressure, duration, and error details |
+| **Abnormal Pipeline Duration** | Pipeline succeeds but execution time increases significantly | Compare historical duration and identify slow activity |
 
 ---
 
@@ -436,7 +437,3 @@ Monitoring and alerting can help notify teams when important failures or executi
 5. **Fix the underlying issue before rerunning the pipeline.**
 6. **Validate the result after every troubleshooting action.**
 7. **Use clear activity names to make debugging easier.**
-
-```
-```
-
