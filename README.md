@@ -1,13 +1,14 @@
-<div align="center"><h1>Microsoft Fabric Learning Journey</h1></div>
+# Microsoft Fabric Learning Journey
 
 A structured learning journey focused on **Microsoft Fabric, Data Analytics, Data Engineering concepts, and Power BI integration**.
 
 This repository documents my learning, handwritten notes, hands-on practice, technical documentation, and guided project implementation while learning Microsoft Fabric.
 
-<div align="center"><img src="https://raw.githubusercontent.com/SupreetTarwarkar/SupreetTarwarkar/main/Profile-Assets/section-line.svg" width="82%" alt="section divider"/></div>
-<div align="center"><b>1. TOPICS LEARNED</b></div>
+---
 
-<div align="center"><b>Microsoft Fabric Fundamentals</b></div>
+## 1. Topics Learned
+
+### Microsoft Fabric Fundamentals
 
 - Microsoft Fabric overview and architecture
 - Fabric workloads
@@ -16,7 +17,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Fabric capacity and F SKUs
 - Fabric trial and capacity concepts
 
-<div align="center"><b>OneLake</b></div>
+### OneLake
 
 - Microsoft OneLake
 - Unified data lake concept
@@ -24,7 +25,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - OneLake and Power BI integration
 - Direct Lake
 
-<div align="center"><b>Lakehouse</b></div>
+### Lakehouse
 
 - Microsoft Fabric Lakehouse
 - Lakehouse architecture
@@ -32,7 +33,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Medallion Architecture
 - Bronze, Silver and Gold layers
 
-<div align="center"><b>Data Ingestion & Orchestration</b></div>
+### Data Ingestion & Orchestration
 
 - Data ingestion in Microsoft Fabric
 - Data Pipelines
@@ -43,7 +44,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - On Completion
 - On Skip
 
-<div align="center"><b>Data Transformation</b></div>
+### Data Transformation
 
 - Data preparation and transformation
 - Data cleaning
@@ -51,7 +52,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Power Query transformations
 - Dataflow Gen2
 
-<div align="center"><b>PySpark & SQL</b></div>
+### PySpark & SQL
 
 - PySpark fundamentals
 - PySpark DataFrames
@@ -60,7 +61,7 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - SQL querying
 - Filtering, grouping and aggregation
 
-<div align="center"><b>Power BI & Fabric Integration</b></div>
+### Power BI & Fabric Integration
 
 - Lakehouse to Power BI workflow
 - Semantic Models
@@ -69,14 +70,15 @@ This repository documents my learning, handwritten notes, hands-on practice, tec
 - Data visualization
 - Business-oriented analysis
 
-<div align="center"><img src="https://raw.githubusercontent.com/SupreetTarwarkar/SupreetTarwarkar/main/Profile-Assets/section-line.svg" width="82%" alt="section divider"/></div>
-<div align="center"><b>2. NOTES & LEARNING APPROACH</b></div>
+---
+
+## 2. Notes & Learning Approach
 
 The concepts learned during this journey are organized into topic-wise notes for revision and future reference.
 
 **[View Microsoft Fabric Notes & Table of Contents](Microsoft-Fabric-Notes/00.%20Table-of-Content.md)**
 
-<div align="center"><b>Learning Approach</b></div>
+### Learning Approach
 
 **Learn → Reinforce → Practice → Document → Build → Showcase**
 
@@ -87,15 +89,15 @@ The concepts learned during this journey are organized into topic-wise notes for
 - Learning documented in GitHub
 - Concepts applied through guided project work
 - Final work organized for portfolio showcase
+---
 
-<div align="center"><img src="https://raw.githubusercontent.com/SupreetTarwarkar/SupreetTarwarkar/main/Profile-Assets/section-line.svg" width="82%" alt="section divider"/></div>
-<div align="center"><b>3. HR ATTRITION GUIDED PROJECT</b></div>
+## 3. HR Attrition Guided Project
 
 As part of this learning journey, I implemented a guided **HR Attrition Analysis** project using **Microsoft Fabric and Power BI**.
 
 The complete project is organized in the `Projects/HR-Attrition/` folder.
 
-<div align="center"><b>Repository Structure</b></div>
+### Repository Structure
 
 ```text
 Projects/
@@ -112,30 +114,33 @@ Detailed project documentation, dataset, screenshots, Power BI file, and project
 
 **[HR Attrition Project](Projects/HR-Attrition/)**
 
-<div align="center"><img src="https://raw.githubusercontent.com/SupreetTarwarkar/SupreetTarwarkar/main/Profile-Assets/section-line.svg" width="82%" alt="section divider"/></div>
-<div align="center"><b>4. LEARNING RESOURCE & REFERENCE</b></div>
+---
+
+## 4. Learning Resource & Reference
 
 This learning journey was supported by the structured **Microsoft Fabric learning series by Mansi Goel**.
 
 The videos and demonstrations were used as the primary learning resource for understanding Microsoft Fabric concepts and following the guided learning process.
 
-<div align="center"><b>Primary Learning Resource</b></div>
+### Primary Learning Resource
 
 **[Microsoft Fabric Learning Series : Mansi Goel](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=qS1q9ILYpDBtXBGB)**
 
-<div align="center"><img src="https://raw.githubusercontent.com/SupreetTarwarkar/SupreetTarwarkar/main/Profile-Assets/section-line.svg" width="82%" alt="section divider"/></div>
-<div align="center"><b>5. CERTIFICATIONS</b></div>
+---
 
-<div align="center"><b>Microsoft Certified: Power BI Data Analyst Associate : PL-300</b></div>
+## 5. Certifications
+
+### Microsoft Certified: Power BI Data Analyst Associate : PL-300
 
 **[View Microsoft Credential](https://learn.microsoft.com/en-us/users/supreettarwarkar/credentials/b29f0f1736af0b52)**
 
-<div align="center"><b>Microsoft Certified: Fabric Analytics Engineer Associate : DP-600</b></div>
+### Microsoft Certified: Fabric Analytics Engineer Associate : DP-600
 
 **[View Microsoft Credential](https://learn.microsoft.com/en-us/users/supreettarwarkar/credentials/63b7b94a00ef0870)**
 
-<div align="center"><img src="https://raw.githubusercontent.com/SupreetTarwarkar/SupreetTarwarkar/main/Profile-Assets/section-line.svg" width="82%" alt="section divider"/></div>
-<div align="center"><b>6. ACKNOWLEDGEMENT</b></div>
+---
+
+## 6. Acknowledgement
 
 Special thanks to **Mansi Goel** for creating and sharing the Microsoft Fabric learning series and guided project demonstrations.
 
@@ -144,8 +149,10 @@ The notes and implementations in this repository were **learned, extracted, and 
 * **YouTube Channel:** [Mansi Goel](https://www.youtube.com/@Mansi.goel.offical?utm_source=chatgpt.com)
 * **Learning Series Playlist:** [Microsoft Fabric Learning Series](https://youtube.com/playlist?list=PLTrZQU5-tBf7Lp0bJWvcjLiwUiUS-iEDb&si=j0UU7DJIFF5fATOX&utm_source=chatgpt.com)
 
-<div align="center"><img src="https://raw.githubusercontent.com/SupreetTarwarkar/SupreetTarwarkar/main/Profile-Assets/section-line.svg" width="82%" alt="section divider"/></div>
-<div align="center"><b>AUTHOR</b></div>
+
+---
+
+## Author
 
 **Supreet Tarwarkar**
 
